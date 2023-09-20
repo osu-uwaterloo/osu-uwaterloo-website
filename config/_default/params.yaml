@@ -1,0 +1,55 @@
+executives:
+  - username: Iconix
+    userId: 3898439
+    term: null
+    program: null
+    name: null
+    discord: iconix
+    twitch: null
+    youtube: null
+    blurb: null
+    role: President
+  - username: Bopchk
+    userId: 18465869
+    term: null
+    program: null
+    name: null
+    discord: bopchk
+    twitch: null
+    youtube: null
+    blurb: null
+    role: Vice President
+  - username: jiaxunjason
+    userId: 6925441
+    term: null
+    program: null
+    name: null
+    discord: jiaxunjason
+    twitch: null
+    youtube: null
+    blurb: null
+    role: Tournament Host
+  - username: bubblesimpi
+    userId: 16789458
+    term: null
+    program: null
+    name: null
+    discord: bubblesimpi
+    twitch: null
+    youtube: null
+    blurb: null
+    role: Contest Host
+  - username: Reiji Maigo
+    userId: 13875116
+    term: null
+    program: null
+    name: null
+    discord: keldsa
+    twitch: null
+    youtube: null
+    blurb: null
+    role: Treasurer
+
+members:
+
+alumni:

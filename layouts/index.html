@@ -1,0 +1,24 @@
+<html>
+  <head>
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
+    {{ $cookieStyles := resources.Get "sass/cookie.scss" | resources.ToCSS }}
+    <title>{{ print .Site.Title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+    <link rel="stylesheet" href="{{ $cookieStyles.RelPermalink }}">
+    <link rel="icon" href="/images/logo.png" />
+  </head>
+  <body>
+    <div id="osuButtonContainer">
+      <div id="buttonWrapper">
+        <osuButton @osubtnclicked="showOptions" @osubtnclear="clearOptions" v-bind:src="src"></osuButton>
+        <div id="allOptions">
+          <osuOption ref="optionsMenu" v-for="option in options" v-bind:filename="option.filename" v-bind:url="option.url">
+          </osuOption>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/scripts/script.js"></script>
+</html>

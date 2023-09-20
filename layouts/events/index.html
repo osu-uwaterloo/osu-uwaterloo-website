@@ -1,0 +1,10 @@
+{{ define "main" }}
+<h1>events</h1>
+<main>
+  <div class="events">
+    {{ range .Pages }}
+    <a class="event" href="{{ .Permalink }}"><img src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}"></a>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

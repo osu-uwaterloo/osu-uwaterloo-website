@@ -1,0 +1,102 @@
+{{ define "main" }}
+<main>
+  <div class="members">
+    <h1>{{ .Title }}</h1>
+    <h2>Executives</h2>
+    <div class="members-executives">
+      {{ range $.Site.Params.executives }}
+      <div class="member member-executive">
+        <img class="pfp pfp-executive" src="https://a.ppy.sh/{{ .userId }}"
+          alt="osu! profile picture for user {{ .username }}">
+        <div class="member-details">
+          <span class="member-username"><a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a></span>
+          <span class="member-role">{{ .role }}</span>
+          {{ if or (.term) (.program) }}
+          <span class="member-program">
+            {{ if .term }}{{ .term }}{{ end }}
+            {{ if .program }}{{ .program }}{{ end }}
+          </span>
+          {{ end }}
+          {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
+          <div class="member-socials-flex">
+            <span class="member-socials">
+              <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
+            {{ if .twitch }}
+            <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch }}</a></span>
+            {{ end }}
+            {{ if .youtube }}
+            <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{ .youtube }}</a></span>
+            {{ end }}
+            </span>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <h2>Members</h2>
+    <div class="members-members">
+      {{ range $.Site.Params.members }}
+      <div class="member member-member">
+        <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}"
+          alt="osu! profile picture for user {{ .username }}">
+        <div class="member-details">
+          <span class="member-username"><a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a></span>
+          {{ if or (.term) (.program) }}
+          <span class="member-program">
+            {{ if .term }}{{ .term }}{{ end }}
+            {{ if .program }}{{ .program }}{{ end }}
+          </span>
+          {{ end }}
+          {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
+          <div class="member-socials-flex">
+            <span class="member-socials">
+              <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
+              {{ if .twitch }}
+              <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch
+                  }}</a></span>
+              {{ end }}
+              {{ if .youtube }}
+              <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{
+                  .youtube }}</a></span>
+              {{ end }}
+            </span>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <h2>Alumni</h2>
+    <div class="members-alumni">
+      {{ range $.Site.Params.alumni }}
+      <div class="member member-alumnus">
+        <img class="pfp pfp-alumnus" src="https://a.ppy.sh/{{ .userId }}"
+          alt="osu! profile picture for user {{ .username }}">
+        <div class="member-details">
+          <span class="member-username"><a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a></span>
+          {{ if or (.term) (.program) }}
+          <span class="member-program">
+            {{ if .term }}{{ .term }}{{ end }}
+            {{ if .program }}{{ .program }}{{ end }}
+          </span>
+          {{ end }}
+          {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
+          <div class="member-socials-flex">
+            <span class="member-socials">
+              <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
+              {{ if .twitch }}
+              <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch
+                  }}</a></span>
+              {{ end }}
+              {{ if .youtube }}
+              <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{
+                  .youtube }}</a></span>
+              {{ end }}
+            </span>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</main>
+{{ end }}
