@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+html {
+  background-color: #333;
+  background-image: url("/images/e5-stairs-triangles.png");
+  background-size: cover;
+  background-repeat: repeat-y; }
+
+body {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  color: #ddd;
+  margin: 0; }
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1em; }
+
+div.members-executives, div.members-members, div.members-alumni {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em; }
+
+div.members {
+  margin-bottom: 1em; }
+  div.members div.member {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em; }
+    div.members div.member div.member-details {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline; }
+      div.members div.member div.member-details span.member-username {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #e8ca21; }
+      div.members div.member div.member-details span.member-program {
+        font-size: 0.75em;
+        color: #999; }
+      div.members div.member div.member-details span.member-blurb {
+        margin-top: 0.5rem; }
+      div.members div.member div.member-details span.member-socials {
+        color: #999;
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.5rem;
+        column-gap: 1em; }
+        div.members div.member div.member-details span.member-socials span.member-social-link {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          column-gap: 0.25em; }
+      div.members div.member div.member-details div.member-socials-flex {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: end; }
+    div.members div.member.member-executive > div.member-details > span.member-username {
+      font-size: 2em; }
+
+div.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21em, 2fr));
+  gap: 1em;
+  margin-bottom: 1em; }
+  div.events a.event img {
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    border-radius: 2px;
+    width: 100%; }
+    div.events a.event img:hover {
+      filter: brightness(0.75);
+      transition-duration: 150ms; }
+
+span.event-author {
+  margin-top: -1em; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0; }
+  nav a {
+    color: unset;
+    text-decoration: none; }
+  nav svg {
+    height: 1.5em; }
+  nav div.nav-navigation {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.75em;
+    align-items: center; }
+    nav div.nav-navigation img {
+      width: 3em;
+      height: 3em; }
+      nav div.nav-navigation img:hover {
+        filter: brightness(0.8);
+        transition-duration: 150ms; }
+    nav div.nav-navigation div.nav-navigation-text-links {
+      display: flex;
+      flex-direction: row;
+      column-gap: 0.25em; }
+      nav div.nav-navigation div.nav-navigation-text-links a {
+        border-radius: 4px;
+        text-decoration: none;
+        padding: 0.5em 1em; }
+        nav div.nav-navigation div.nav-navigation-text-links a:hover {
+          color: #e8ca21;
+          background-color: #222;
+          transition-duration: 150ms; }
+  nav div.nav-socials {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em; }
+    nav div.nav-socials svg:hover {
+      fill: #e8ca21;
+      transition-duration: 150ms; }
+
+footer {
+  padding: 1em 0; }
+
+a {
+  color: #e8ca21;
+  text-decoration: none; }
+  a:hover {
+    color: #f3e072;
+    text-decoration: underline; }
+
+img.pfp {
+  border: 2px solid #ddd;
+  border-radius: 4px; }
+  img.pfp.pfp-executive {
+    width: 7em;
+    height: 7em;
+    border: 3px solid #ddd; }
+  img.pfp.pfp-member, img.pfp.pfp-alumnus {
+    width: 4em;
+    height: 4em; }
+
+img.event-image {
+  margin-top: 1em;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover; }
+
+h1.title-with-author {
+  margin-bottom: 0; }
+
+svg {
+  fill: #ddd;
+  height: 1em;
+  align-items: center; }
+
+hr {
+  border-top: 2px solid #222;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  width: 100%;
+  margin: 0; }
+
+p {
+  line-height: 1.5em; }
