@@ -22,4 +22,4 @@ View osu!uwaterloo's collegiate competition history [here](https://docs.google.c
 
 ## Meta
 
-This website is hosted on the UWaterloo [Computer Science Club](https://csclub.uwaterloo.ca/) servers. This website is built using the [Hugo](https://gohugo.io/) templating engine. The [source code](https://github.com/) is available on GitHub. Members who wish to contribute to the club website development are more than welcome to do so! Instructions on how to do so can be found in the project README.
+This website is hosted on the UWaterloo [Computer Science Club](https://csclub.uwaterloo.ca/) servers. This website is built using the [Hugo](https://gohugo.io/) templating engine. The [source code](https://github.com/osu-uwaterloo/osu-uwaterloo-website) is available on GitHub. Members who wish to contribute to the club website development are more than welcome to do so! Instructions on how to do so can be found in the project README.
