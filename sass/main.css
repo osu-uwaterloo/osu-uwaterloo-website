@@ -37,6 +37,10 @@ div.members {
         font-weight: bold;
         font-size: 1.5em;
         color: #e8ca21; }
+      div.members div.member div.member-details span.member-name {
+        font-size: 0.75em;
+        font-weight: normal;
+        color: #999; }
       div.members div.member div.member-details span.member-program {
         font-size: 0.75em;
         color: #999; }
