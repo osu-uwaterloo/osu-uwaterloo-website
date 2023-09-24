@@ -121,8 +121,8 @@ members:
     twitch: null
     youtube: null
     blurb: GM.
-  - username: Joseph33
-    userId: 20887374
+  - username: danielq987
+    userId: 10538842
     term: 3B
     program: Mechatronics Engineering
     name: Daniel Qu
@@ -130,5 +130,58 @@ members:
     twitch: blobbyliu
     youtube: danielqu
     blurb: Hi I enjoy playing music, climbing, and taking naps. My favourite osu! map is deeeefinitely system sun!
-
+  - username: LazyGhost14
+    userId: 13185425
+    term: 1A
+    program: null
+    name: null
+    discord: lazyghost14
+    twitch: null
+    youtube: null
+    blurb: 4k Mania main (disabled at 7k ;n; trying my best to learn it)
+  - username: PikaPwn
+    userId: 2012453
+    term: null
+    program: null
+    name: null
+    discord: pikapwn
+    twitch: pikapwnosu
+    youtube: pikachu3631
+    blurb: high accuracy plays only!!!
+  - username: lunarcoffee
+    userId: 11765280
+    term: 2A
+    program: CS
+    name: Fred Gao
+    discord: lunarcoffee_
+    twitch: null
+    youtube: null
+    blurb: mania player and life enthusiast :)
+  - username: Cheeesy
+    userId: 30738885
+    term: 1A
+    program: null
+    name: Michael
+    discord: Cheesy
+    twitch: null
+    youtube: null
+    blurb: Cheesy
 alumni:
+  - username: Wayakuyee
+    userId: 4002079
+    year: 2023
+    program: ECE
+    name: Ted
+    discord: tedyee
+    twitch: Wayakuyee
+    youtube: GundownShowdown
+    blurb: Foodie Fruitie has cockroaches
+  - username: ThunderBird2678
+    userId: 3388082
+    year: 2022
+    program: ECE
+    name: Kai
+    discord: thunderbird
+    twitch: thunderbird2678
+    youtube: thunderbird2678
+    blurb: Good morning

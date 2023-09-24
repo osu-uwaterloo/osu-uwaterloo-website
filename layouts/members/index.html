@@ -88,10 +88,10 @@
               <span class="member-name">({{ .name }})</span>
             {{ end }}
           </span>
-          {{ if or (.term) (.program) }}
+          {{ if or (.year) (.program) }}
           <span class="member-program">
-            {{ if .term }}{{ .term }}{{ end }}
             {{ if .program }}{{ .program }}{{ end }}
+            {{ if .year }}{{ .year }}{{ end }}
           </span>
           {{ end }}
           {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
