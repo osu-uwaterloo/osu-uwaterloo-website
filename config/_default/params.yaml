@@ -166,6 +166,33 @@ members:
     twitch: null
     youtube: null
     blurb: Cheesy
+  - username: ru1rhys
+    userId: 15251002
+    term: 1A
+    program: CS
+    name: null
+    discord: mizukuru
+    twitch: null
+    youtube: null
+    blurb: what do i put here
+  - username: antix
+    userId: 12455534
+    term: 1A
+    program: GBDA
+    name: jason
+    discord: .antix
+    twitch: null
+    youtube: null
+    blurb: ヾ(⌐■_■)ノ♪
+  - username: TsumugiP
+    userId: 14257870
+    term: 2A
+    program: ECE
+    name: Raiyan
+    discord: tsumugip
+    twitch: null
+    youtube: null
+    blurb: I love tsumugi
 alumni:
   - username: Wayakuyee
     userId: 4002079
