@@ -58,5 +58,130 @@ executives:
     role: Treasurer
 
 members:
-
+  - username: Nijika Ijichi
+    userId: 10964252
+    term: 1A
+    program: CE
+    name: null
+    discord: donkplant
+    twitch: null
+    youtube: null
+    blurb: hiiiiiiiiiiiii
+  - username: 2sleepi
+    userId: 11474963
+    term: 2A
+    program: ECE
+    name: Danee Cho
+    discord: juifrt
+    twitch: mackaree
+    youtube: null
+    blurb: null
+  - username: RedcXca
+    userId: 14056601
+    term: 2A
+    program: SE
+    name: Max
+    discord: redcxca
+    twitch: null
+    youtube: null
+    blurb: 1B Software Engineering Student. I was the one who drew Pippi feet. All modes player, artist, and foodie fruitie enjoyer :3
+  - username: Feiri
+    userId: 3214844
+    term: 4A
+    program: ECE
+    name: Yifei
+    discord: feiri
+    twitch: feiri_
+    youtube: feiri_
+    blurb: Big fan of tech maps but I think I'm overworking myself accepting all these tourney mapping requests please help
+  - username: Moshisme
+    userId: 32405557
+    term: 1A
+    program: Honors Math
+    name: Mitchell
+    discord: Moshi
+    twitch: null
+    youtube: null
+    blurb: I wanted something to do in my free time and clicking circles is fun. Also, playing Osu with a mouse isn't weird, using kbm in Rocket League is weird (and I do).
+  - username: Anlei
+    userId: 12983997
+    term: 1A
+    program: CE
+    name: Stefan
+    discord: anleii
+    twitch: null
+    youtube: null
+    blurb: nomod enjoyer
+  - username: Zer0-G
+    userId: 12577911
+    term: null
+    program: Honours Mathematics
+    name: null
+    discord: zer0g
+    twitch: null
+    youtube: null
+    blurb: GM.
+  - username: danielq987
+    userId: 10538842
+    term: 3B
+    program: Mechatronics Engineering
+    name: Daniel Qu
+    discord: d3qu
+    twitch: blobbyliu
+    youtube: danielqu
+    blurb: Hi I enjoy playing music, climbing, and taking naps. My favourite osu! map is deeeefinitely system sun!
+  - username: LazyGhost14
+    userId: 13185425
+    term: 1A
+    program: null
+    name: null
+    discord: lazyghost14
+    twitch: null
+    youtube: null
+    blurb: 4k Mania main (disabled at 7k ;n; trying my best to learn it)
+  - username: PikaPwn
+    userId: 2012453
+    term: null
+    program: null
+    name: null
+    discord: pikapwn
+    twitch: pikapwnosu
+    youtube: pikachu3631
+    blurb: high accuracy plays only!!!
+  - username: lunarcoffee
+    userId: 11765280
+    term: 2A
+    program: CS
+    name: Fred Gao
+    discord: lunarcoffee_
+    twitch: null
+    youtube: null
+    blurb: mania player and life enthusiast :)
+  - username: Cheeesy
+    userId: 30738885
+    term: 1A
+    program: null
+    name: Michael
+    discord: Cheesy
+    twitch: null
+    youtube: null
+    blurb: Cheesy
 alumni:
+  - username: Wayakuyee
+    userId: 4002079
+    year: 2023
+    program: ECE
+    name: Ted
+    discord: tedyee
+    twitch: Wayakuyee
+    youtube: GundownShowdown
+    blurb: Foodie Fruitie has cockroaches
+  - username: ThunderBird2678
+    userId: 3388082
+    year: 2022
+    program: ECE
+    name: Kai
+    discord: thunderbird
+    twitch: thunderbird2678
+    youtube: thunderbird2678
+    blurb: Good morning

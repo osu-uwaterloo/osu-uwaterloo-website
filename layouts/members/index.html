@@ -9,7 +9,12 @@
         <img class="pfp pfp-executive" src="https://a.ppy.sh/{{ .userId }}"
           alt="osu! profile picture for user {{ .username }}">
         <div class="member-details">
-          <span class="member-username"><a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a></span>
+          <span class="member-username">
+            <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
+            {{ if .name }}
+              <span class="member-name">({{ .name }})</span>
+            {{ end }}
+          </span>
           <span class="member-role">{{ .role }}</span>
           {{ if or (.term) (.program) }}
           <span class="member-program">
@@ -40,7 +45,12 @@
         <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}"
           alt="osu! profile picture for user {{ .username }}">
         <div class="member-details">
-          <span class="member-username"><a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a></span>
+          <span class="member-username">
+            <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
+            {{ if .name }}
+              <span class="member-name">({{ .name }})</span>
+            {{ end }}
+          </span>
           {{ if or (.term) (.program) }}
           <span class="member-program">
             {{ if .term }}{{ .term }}{{ end }}
@@ -72,11 +82,16 @@
         <img class="pfp pfp-alumnus" src="https://a.ppy.sh/{{ .userId }}"
           alt="osu! profile picture for user {{ .username }}">
         <div class="member-details">
-          <span class="member-username"><a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a></span>
-          {{ if or (.term) (.program) }}
+          <span class="member-username">
+            <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
+            {{ if .name }}
+              <span class="member-name">({{ .name }})</span>
+            {{ end }}
+          </span>
+          {{ if or (.year) (.program) }}
           <span class="member-program">
-            {{ if .term }}{{ .term }}{{ end }}
             {{ if .program }}{{ .program }}{{ end }}
+            {{ if .year }}{{ .year }}{{ end }}
           </span>
           {{ end }}
           {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
