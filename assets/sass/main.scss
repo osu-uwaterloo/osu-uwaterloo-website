@@ -213,6 +213,7 @@ a {
 img.pfp {
     border: 2px solid $font-colour;
     border-radius: 4px;
+    object-fit: cover;
 
     &.pfp-executive {
         width: 7em;

@@ -6,8 +6,11 @@
     <div class="members-executives">
       {{ range $.Site.Params.executives }}
       <div class="member member-executive">
-        <img class="pfp pfp-executive" src="https://a.ppy.sh/{{ .userId }}"
-          alt="osu! profile picture for user {{ .username }}">
+        {{ if isset . "altPfp" }}
+        <img class="pfp pfp-executive" src="{{ .altPfp }}" alt="Picture for user {{ .username }}">
+        {{ else }}
+        <img class="pfp pfp-executive" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
+        {{ end }}
         <div class="member-details">
           <span class="member-username">
             <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
@@ -42,8 +45,11 @@
     <div class="members-members">
       {{ range $.Site.Params.members }}
       <div class="member member-member">
-        <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}"
-          alt="osu! profile picture for user {{ .username }}">
+        {{ if isset . "altPfp" }}
+          <img class="pfp pfp-member" src="{{ .altPfp }}" alt="member picture for user {{ .username }}">        
+        {{ else }}
+          <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
+        {{ end }}
         <div class="member-details">
           <span class="member-username">
             <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
@@ -79,8 +85,11 @@
     <div class="members-alumni">
       {{ range $.Site.Params.alumni }}
       <div class="member member-alumnus">
-        <img class="pfp pfp-alumnus" src="https://a.ppy.sh/{{ .userId }}"
-          alt="osu! profile picture for user {{ .username }}">
+        {{ if isset . "altPfp" }}
+        <img class="pfp pfp-alumnus" src="{{ .altPfp }}" alt="Picture for user {{ .username }}">
+        {{ else }}
+        <img class="pfp pfp-alumnus" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
+        {{ end }}
         <div class="member-details">
           <span class="member-username">
             <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
