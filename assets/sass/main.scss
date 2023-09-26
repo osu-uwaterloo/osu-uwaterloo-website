@@ -18,7 +18,7 @@ $accent-colour: $yellow-2;
 html {
     background-color: $background-colour;
     background-image: url("/images/e5-stairs-triangles.png");
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: repeat-y;
 }
 
