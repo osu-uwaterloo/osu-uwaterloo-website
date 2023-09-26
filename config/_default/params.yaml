@@ -8,13 +8,13 @@ urls:
 executives:
   - username: Iconix
     userId: 3898439
-    term: null
-    program: null
-    name: null
+    term: 2B
+    program: CS
+    name: Brendan
     discord: iconix
-    twitch: null
-    youtube: null
-    blurb: 2B CS student, weakest idol enjoyer. 130-140 BPM flow alt goes crazy. Rune Factory helps me cope after going 8875 in TFT :D
+    twitch: iconix123
+    youtube: iconix-b
+    blurb: Weakest idol enjoyer. 130-140 BPM flow alt goes crazy. Rune Factory helps me cope after going 8875 in TFT :D
     role: President
   - username: Bopchk
     userId: 18465869
@@ -84,7 +84,7 @@ members:
     discord: redcxca
     twitch: null
     youtube: null
-    blurb: 1B Software Engineering Student. I was the one who drew Pippi feet. All modes player, artist, and foodie fruitie enjoyer :3
+    blurb: I was the one who drew Pippi feet. All modes player, artist, and foodie fruitie enjoyer :3
   - username: Feiri
     userId: 3214844
     term: 4A
