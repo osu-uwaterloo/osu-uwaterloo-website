@@ -37,72 +37,85 @@ div.container {
     padding: 0 1em;
 }
 
-div.members-executives, div.members-members, div.members-alumni {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1em;
-}
 
-div.members{
+div.members-section{
     margin-bottom: 1em;
 
-    div.member {
+    div.members {
         display: flex;
-        flex-direction: row;
-        column-gap: 1em;
-    
-        div.member-details {
+        flex-direction: column;
+        row-gap: 1em;
+
+        div.member {
             display: flex;
-            flex-direction: column;
-            align-items: baseline;
-            // row-gap: 0.125em;
-    
-            span.member-username {
-                font-weight: bold;
-                font-size: 1.5em;
-                color: $accent-colour;
-            }
+            flex-direction: row;
+            column-gap: 1em;
 
-            span.member-name {
-                font-size: 0.75em;
-                font-weight: normal;
-                color: $muted-font-colour;
+            img.pfp {
+                border: 2px solid $font-colour;
+                border-radius: 4px;
+                object-fit: cover;
+                width: 4em;
+                height: 4em;
             }
-    
-            span.member-program {
-                font-size: 0.75em;
-                color: $muted-font-colour;
-            }
-            
-            span.member-blurb {
-                margin-top: 0.5rem;
-            }
-            
-            span.member-socials {
-                color: $muted-font-colour;
+            div.member-details {
                 display: flex;
-                flex-direction: row;
-                margin-top: 0.5rem;
-                column-gap: 1em;
+                flex-direction: column;
+                align-items: baseline;
+                // row-gap: 0.125em;
+        
+                span.member-username {
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    color: $accent-colour;
+                }
 
-                span.member-social-link {
+                span.member-name {
+                    font-size: 0.75em;
+                    font-weight: normal;
+                    color: $muted-font-colour;
+                }
+        
+                span.member-program {
+                    font-size: 0.75em;
+                    color: $muted-font-colour;
+                }
+                
+                span.member-blurb {
+                    margin-top: 0.5rem;
+                }
+                
+                span.member-socials {
+                    color: $muted-font-colour;
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
-                    column-gap: 0.25em;
+                    margin-top: 0.5rem;
+                    column-gap: 1em;
+
+                    span.member-social-link {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        column-gap: 0.25em;
+                    }
+                }
+
+                div.member-socials-flex {
+                    display: flex;
+                    flex-grow: 1;
+                    flex-direction: column;
+                    justify-content: end;
                 }
             }
-
-            div.member-socials-flex {
-                display: flex;
-                flex-grow: 1;
-                flex-direction: column;
-                justify-content: end;
-            }
         }
-    
-        &.member-executive > div.member-details {
-            > span.member-username { font-size: 2em; }
+        
+        &.members-executives > div.member  {
+            > img.pfp {
+                width: 7em;
+                height: 7em;
+                border: 3px solid $font-colour;
+            }
+            > div.member-details > span.member-username { font-size: 2em; }
             // > span.member-program { font-size: unset; }
         }
     }
@@ -207,23 +220,6 @@ a {
     &:hover {
         color: $accent-light-colour;
         text-decoration: underline;
-    }
-}
-
-img.pfp {
-    border: 2px solid $font-colour;
-    border-radius: 4px;
-    object-fit: cover;
-
-    &.pfp-executive {
-        width: 7em;
-        height: 7em;
-        border: 3px solid $font-colour;
-    }
-
-    &.pfp-member, &.pfp-alumnus {
-        width: 4em;
-        height: 4em;
     }
 }
 
