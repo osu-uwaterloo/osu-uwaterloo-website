@@ -1,44 +1,44 @@
 <div class="member member-member">
-	{{ if isset . "altPfp" }}
-	<img class="pfp pfp-member" src="{{ .altPfp }}" alt="member picture for user {{ .username }}">        
-	{{ else }}
-	<img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
-	{{ end }}
-	<div class="member-details">
-		<span class="member-username">
-			<a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
-			{{ if .name }}
-			<span class="member-name">({{ .name }})</span>
-			{{ end }}
-		</span>
+  {{ if isset . "altPfp" }}
+  <img class="pfp pfp-member" src="{{ .altPfp }}" alt="member picture for user {{ .username }}">        
+  {{ else }}
+  <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
+  {{ end }}
+  <div class="member-details">
+    <span class="member-username">
+      <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
+      {{ if .name }}
+      <span class="member-name">({{ .name }})</span>
+      {{ end }}
+    </span>
     {{ if .role }}
       <span class="member-role">{{ .role }}</span>
     {{ end }}
-		{{ if or (.term) (.program) (.year) }}
-		<span class="member-program">
-			{{ if .term }}{{ .term }}{{ end }}
-			{{ if .program }}{{ .program }}{{ end }}
-			{{ if .year }}{{ .year }}{{ end }}
-		</span>
-		{{ end }}
-		{{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
-		<div class="member-socials-flex">
-			<span class="member-socials">
-			<span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
-			{{ if .website }}
+    {{ if or (.term) (.program) (.year) }}
+    <span class="member-program">
+      {{ if .term }}{{ .term }}{{ end }}
+      {{ if .program }}{{ .program }}{{ end }}
+      {{ if .year }}{{ .year }}{{ end }}
+    </span>
+    {{ end }}
+    {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
+    <div class="member-socials-flex">
+      <span class="member-socials">
+      <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
+      {{ if .website }}
         {{ $website := .website | replaceRE "^(https?://)?(.*?)/?$" "$2" }}
-			  <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}">{{ $website }}</a></span>
-			{{ end }}
-			{{ if .github }}
-			  <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .github }}">{{ .github }}</a></span>
-			{{ end }}
-			{{ if .twitch }}
-			  <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch }}</a></span>
-			{{ end }}
-			{{ if .youtube }}
-			  <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{ .youtube }}</a></span>
-			{{ end }}
-			</span>
-		</div>
-	</div>
+        <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}">{{ $website }}</a></span>
+      {{ end }}
+      {{ if .github }}
+        <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .github }}">{{ .github }}</a></span>
+      {{ end }}
+      {{ if .twitch }}
+        <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch }}</a></span>
+      {{ end }}
+      {{ if .youtube }}
+        <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{ .youtube }}</a></span>
+      {{ end }}
+      </span>
+    </div>
+  </div>
 </div>
