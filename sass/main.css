@@ -2,7 +2,7 @@
 html {
   background-color: #333;
   background-image: url("/images/e5-stairs-triangles.png");
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: repeat-y; }
 
 body {
