@@ -25,6 +25,13 @@
 		<div class="member-socials-flex">
 			<span class="member-socials">
 			<span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
+			{{ if .website }}
+        {{ $website := .website | replaceRE "^(https?://)?(.*?)/?$" "$2" }}
+			  <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}">{{ $website }}</a></span>
+			{{ end }}
+			{{ if .github }}
+			  <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .github }}">{{ .github }}</a></span>
+			{{ end }}
 			{{ if .twitch }}
 			  <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch }}</a></span>
 			{{ end }}
