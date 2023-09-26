@@ -136,7 +136,8 @@ a {
 
 img.pfp {
   border: 2px solid #ddd;
-  border-radius: 4px; }
+  border-radius: 4px;
+  object-fit: cover; }
   img.pfp.pfp-executive {
     width: 7em;
     height: 7em;
