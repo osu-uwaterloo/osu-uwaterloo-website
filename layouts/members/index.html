@@ -6,7 +6,7 @@
     <h2>Executives</h2>
     <div class="members members-executives">
       {{ range $.Site.Params.executives }}
-        {{ partial "member-entry" . }}
+        {{ partial "member-entry" (dict "member" . "type" "executive")}}
       {{ end }}
     </div>
 
@@ -14,7 +14,7 @@
     {{ $sortedMembers := sort $.Site.Params.members "username" }}
     <div class="members members-members">
       {{ range $sortedMembers }}
-        {{ partial "member-entry" . }}
+        {{ partial "member-entry" (dict "member" . "type" "member")}}
       {{ end }}
     </div>
 
@@ -22,7 +22,7 @@
     {{ $sortedAlumni := sort $.Site.Params.alumni "username" }}
     <div class="members members-alumni">
       {{ range $sortedAlumni }}
-        {{ partial "member-entry" . }}
+        {{ partial "member-entry" (dict "member" . "type" "alumni")}}
       {{ end }}
     </div>
   </div>
