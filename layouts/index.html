@@ -3,22 +3,47 @@
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
     {{ $cookieStyles := resources.Get "sass/cookie.scss" | resources.ToCSS }}
     <title>{{ print .Site.Title }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     <link rel="stylesheet" href="{{ $cookieStyles.RelPermalink }}">
     <link rel="icon" href="/images/logo.png" />
   </head>
-  <body>
+  <body>    
     <div id="osuButtonContainer">
       <div id="buttonWrapper">
-        <osuButton @osubtnclicked="showOptions" @osubtnclear="clearOptions" v-bind:src="src"></osuButton>
-        <div id="allOptions">
-          <osuOption ref="optionsMenu" v-for="option in options" v-bind:filename="option.filename" v-bind:url="option.url">
-          </osuOption>
+        <div id="logoContainer">
+            <img id="logo" src="/images/logo.png" draggable="false"></img>
+        </div>
+        <div id="optionsContainer">
+          <div class="option">
+            <a class="optionImage" href="/about">
+              <img class="optionImage" src="images/menu-button-1.png"/>
+            </a>
+          </div>
+          <div class="option">
+            <a class="optionImage" href="/members">
+              <img class="optionImage" src="images/menu-button-2.png"/>
+            </a>
+          </div>
+          <div class="option">
+            <a class="optionImage" href="/events">
+              <img class="optionImage" src="images/menu-button-3.png"/>
+            </a>
+          </div>
+          <div class="option">
+            <a class="optionImage" href="https://discord.gg/mfWqAFg">
+              <img class="optionImage" src="images/menu-button-4.png"/>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="/scripts/script.js"></script>
+  <script type="text/javascript">
+    const osuCookie = document.querySelector("#logoContainer");
+    const optionsContainer = document.querySelector("#optionsContainer");
+
+    osuCookie.addEventListener("click", () => {
+        optionsContainer.classList.toggle("open");
+    });
+  </script>
 </html>
