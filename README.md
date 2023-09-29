@@ -12,24 +12,27 @@ This website displays content in the [Rubik](https://fonts.google.com/specimen/R
 
 ## Developing locally
 
-Developing the website locally can help you preview changes before creating a merge request to the master branch.
+Developing the website locally can help you preview changes before creating a merge request to the master branch. Make sure you have cloned the repository first:
 
-In order to develop locally, you will need to install *Hugo Extended*. Follow the [Hugo installation guide](https://gohugo.io/installation/) to install *Hugo Extended* on your platform of choice.
+```console
+$ git clone https://github.com/osu-uwaterloo/osu-uwaterloo-website.git
+$ cd osu-uwaterloo-website
+```
 
-Then:
+### Option 1: Local Hugo Installation
 
-1. Clone the repository:
-    ```console
-    $ git clone ...
-    ```
-2. `cd` into the project
-    ```console
-    $ cd ...
-    ```
-3. Start the local Hugo server
-    ```console
-    $ hugo server
-    ```
+Install *Hugo Extended*. Follow the [Hugo installation guide](https://gohugo.io/installation/) to install *Hugo Extended* on your platform of choice. After installation, run the following command in the project directory.
+
+```console
+$ hugo server
+```
+### Option 2: Docker Image
+
+To avoid installing Hugo, you can also use the [Hugo docker image](https://hub.docker.com/r/jakejarvis/hugo-extended). First pull the image from Docker Hub, then run the following command.
+
+```console
+$ docker run -v $(pwd):/src -p 1313:1313 jakejarvis/hugo-extended:latest server --buildDrafts --buildFuture --bind 0.0.0.0
+```
 
 ## Content management
 
