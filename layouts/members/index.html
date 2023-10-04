@@ -1,124 +1,28 @@
 {{ define "main" }}
 <main>
-  <div class="members">
+  <div class="members-section">
     <h1>{{ .Title }}</h1>
+
     <h2>Executives</h2>
-    <div class="members-executives">
+    <div class="members members-executives">
       {{ range $.Site.Params.executives }}
-      <div class="member member-executive">
-        {{ if isset . "altPfp" }}
-        <img class="pfp pfp-executive" src="{{ .altPfp }}" alt="Picture for user {{ .username }}">
-        {{ else }}
-        <img class="pfp pfp-executive" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
-        {{ end }}
-        <div class="member-details">
-          <span class="member-username">
-            <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
-            {{ if .name }}
-              <span class="member-name">({{ .name }})</span>
-            {{ end }}
-          </span>
-          <span class="member-role">{{ .role }}</span>
-          {{ if or (.term) (.program) }}
-          <span class="member-program">
-            {{ if .term }}{{ .term }}{{ end }}
-            {{ if .program }}{{ .program }}{{ end }}
-          </span>
-          {{ end }}
-          {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
-          <div class="member-socials-flex">
-            <span class="member-socials">
-              <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
-            {{ if .twitch }}
-            <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch }}</a></span>
-            {{ end }}
-            {{ if .youtube }}
-            <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{ .youtube }}</a></span>
-            {{ end }}
-            </span>
-          </div>
-        </div>
-      </div>
+        {{ partial "member-entry" (dict "member" . "type" "executive")}}
       {{ end }}
     </div>
+
     <h2>Members</h2>
-    <div class="members-members">
-      {{ range $.Site.Params.members }}
-      <div class="member member-member">
-        {{ if isset . "altPfp" }}
-          <img class="pfp pfp-member" src="{{ .altPfp }}" alt="member picture for user {{ .username }}">        
-        {{ else }}
-          <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
-        {{ end }}
-        <div class="member-details">
-          <span class="member-username">
-            <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
-            {{ if .name }}
-              <span class="member-name">({{ .name }})</span>
-            {{ end }}
-          </span>
-          {{ if or (.term) (.program) }}
-          <span class="member-program">
-            {{ if .term }}{{ .term }}{{ end }}
-            {{ if .program }}{{ .program }}{{ end }}
-          </span>
-          {{ end }}
-          {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
-          <div class="member-socials-flex">
-            <span class="member-socials">
-              <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
-              {{ if .twitch }}
-              <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch
-                  }}</a></span>
-              {{ end }}
-              {{ if .youtube }}
-              <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{
-                  .youtube }}</a></span>
-              {{ end }}
-            </span>
-          </div>
-        </div>
-      </div>
+    {{ $sortedMembers := sort $.Site.Params.members "username" }}
+    <div class="members members-members">
+      {{ range $sortedMembers }}
+        {{ partial "member-entry" (dict "member" . "type" "member")}}
       {{ end }}
     </div>
+
     <h2>Alumni</h2>
-    <div class="members-alumni">
-      {{ range $.Site.Params.alumni }}
-      <div class="member member-alumnus">
-        {{ if isset . "altPfp" }}
-        <img class="pfp pfp-alumnus" src="{{ .altPfp }}" alt="Picture for user {{ .username }}">
-        {{ else }}
-        <img class="pfp pfp-alumnus" src="https://a.ppy.sh/{{ .userId }}" alt="osu! profile picture for user {{ .username }}">
-        {{ end }}
-        <div class="member-details">
-          <span class="member-username">
-            <a href="https://osu.ppy.sh/users/{{ .userId }}">{{ .username }}</a>
-            {{ if .name }}
-              <span class="member-name">({{ .name }})</span>
-            {{ end }}
-          </span>
-          {{ if or (.year) (.program) }}
-          <span class="member-program">
-            {{ if .program }}{{ .program }}{{ end }}
-            {{ if .year }}{{ .year }}{{ end }}
-          </span>
-          {{ end }}
-          {{ if .blurb }}<span class="member-blurb">{{ .blurb }}</span>{{ end }}
-          <div class="member-socials-flex">
-            <span class="member-socials">
-              <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .discord }}</span>
-              {{ if .twitch }}
-              <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .twitch }}">@{{ .twitch
-                  }}</a></span>
-              {{ end }}
-              {{ if .youtube }}
-              <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .youtube }}">@{{
-                  .youtube }}</a></span>
-              {{ end }}
-            </span>
-          </div>
-        </div>
-      </div>
+    {{ $sortedAlumni := sort $.Site.Params.alumni "username" }}
+    <div class="members members-alumni">
+      {{ range $sortedAlumni }}
+        {{ partial "member-entry" (dict "member" . "type" "alumni")}}
       {{ end }}
     </div>
   </div>
