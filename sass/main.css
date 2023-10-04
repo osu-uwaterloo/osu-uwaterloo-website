@@ -18,51 +18,60 @@ div.container {
   margin: auto;
   padding: 0 1em; }
 
-div.members-executives, div.members-members, div.members-alumni {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em; }
-
-div.members {
+div.members-section {
   margin-bottom: 1em; }
-  div.members div.member {
+  div.members-section div.members {
     display: flex;
-    flex-direction: row;
-    column-gap: 1em; }
-    div.members div.member div.member-details {
+    flex-direction: column;
+    row-gap: 1em; }
+    div.members-section div.members div.member {
       display: flex;
-      flex-direction: column;
-      align-items: baseline; }
-      div.members div.member div.member-details span.member-username {
-        font-weight: bold;
-        font-size: 1.5em;
-        color: #e8ca21; }
-      div.members div.member div.member-details span.member-name {
-        font-size: 0.75em;
-        font-weight: normal;
-        color: #999; }
-      div.members div.member div.member-details span.member-program {
-        font-size: 0.75em;
-        color: #999; }
-      div.members div.member div.member-details span.member-blurb {
-        margin-top: 0.5rem; }
-      div.members div.member div.member-details span.member-socials {
-        color: #999;
+      flex-direction: row;
+      column-gap: 1em; }
+      div.members-section div.members div.member img.pfp {
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        object-fit: cover;
+        width: 4em;
+        height: 4em; }
+      div.members-section div.members div.member div.member-details {
         display: flex;
-        flex-direction: row;
-        margin-top: 0.5rem;
-        column-gap: 1em; }
-        div.members div.member div.member-details span.member-socials span.member-social-link {
+        flex-direction: column;
+        align-items: baseline; }
+        div.members-section div.members div.member div.member-details span.member-username {
+          font-weight: bold;
+          font-size: 1.5em;
+          color: #e8ca21; }
+        div.members-section div.members div.member div.member-details span.member-name {
+          font-size: 0.75em;
+          font-weight: normal;
+          color: #999; }
+        div.members-section div.members div.member div.member-details span.member-program {
+          font-size: 0.75em;
+          color: #999; }
+        div.members-section div.members div.member div.member-details span.member-blurb {
+          margin-top: 0.5rem; }
+        div.members-section div.members div.member div.member-details span.member-socials {
+          color: #999;
           display: flex;
           flex-direction: row;
-          align-items: center;
-          column-gap: 0.25em; }
-      div.members div.member div.member-details div.member-socials-flex {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: end; }
-    div.members div.member.member-executive > div.member-details > span.member-username {
+          margin-top: 0.5rem;
+          column-gap: 1em; }
+          div.members-section div.members div.member div.member-details span.member-socials span.member-social-link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 0.25em; }
+        div.members-section div.members div.member div.member-details div.member-socials-flex {
+          display: flex;
+          flex-grow: 1;
+          flex-direction: column;
+          justify-content: end; }
+    div.members-section div.members.members-executives > div.member > img.pfp {
+      width: 7em;
+      height: 7em;
+      border: 3px solid #ddd; }
+    div.members-section div.members.members-executives > div.member > div.member-details > span.member-username {
       font-size: 2em; }
 
 div.events {
@@ -133,18 +142,6 @@ a {
   a:hover {
     color: #f3e072;
     text-decoration: underline; }
-
-img.pfp {
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  object-fit: cover; }
-  img.pfp.pfp-executive {
-    width: 7em;
-    height: 7em;
-    border: 3px solid #ddd; }
-  img.pfp.pfp-member, img.pfp.pfp-alumnus {
-    width: 4em;
-    height: 4em; }
 
 img.event-image {
   margin-top: 1em;
