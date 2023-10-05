@@ -23,6 +23,9 @@ body {
     justify-content: center;
     font-size: 1.25vw;
     overflow: hidden;
+    * {
+        user-select: none;
+    }
 }
 
 @media (min-width: 1200px) {
