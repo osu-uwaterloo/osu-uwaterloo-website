@@ -1,7 +1,6 @@
 body {
     overflow: hidden;
     display: flex;
-
 }
 
 .helper {
@@ -23,6 +22,10 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.25vw;
+    overflow: hidden;
+    * {
+        user-select: none;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -37,7 +40,7 @@ body {
     align-items: center;
 }
 
-#allOptions {
+#optionsContainer {
     width: fit-content;
     margin: 0 -25em;
     padding: 0 25em;
@@ -78,8 +81,10 @@ body {
     }
 }
 
-#logo-container {
+#logoContainer {
     z-index: 1;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 img#logo {
@@ -109,29 +114,30 @@ img#logo-overlay {
     pointer-events: none;
 }
 
-.option {
-    display: flex;
-    height: 5.75em;
-    margin-top: 0.5em;
-    align-items: center;
-    width: 0;
-    max-width: 0px;
-    transform: translateX(-75em);
-    filter: opacity(0);
-    transition: all 0.2s ease;
-}
-
-.option.open {
-    width: 25em;
-    max-width: 100em;
-    transform: translateX(-15em);
-    filter: opacity(1);
-}
-
-.option.hover {
-    transform: translateX(-13em);
-    filter: brightness(115%);
-    cursor: pointer;
+#optionsContainer {
+    .option {
+        display: flex;
+        height: 5.75em;
+        margin-top: 0.5em;
+        align-items: center;
+        width: 0;
+        max-width: 0px;
+        transform: translateX(-75em);
+        filter: opacity(0);
+        transition: all 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+    &.open .option {
+        width: 25em;
+        max-width: 100em;
+        transform: translateX(-15em);
+        filter: opacity(1);
+        &:hover {
+            transform: translateX(-13em);
+            filter: brightness(115%);
+            cursor: pointer;
+        }
+    }
 }
 
 img#discord {
