@@ -41,7 +41,7 @@
     </div>
     {{ if .member.blurb }}<span class="member-blurb">{{ .member.blurb }}</span>{{ end }}
     <div class="member-socials">
-      <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .member.discord }}</span>
+      <span class="member-social-link">{{ partial "svg" "filled-discord" }} @{{ .member.discord }}</span>
       {{ if .member.website }}
         {{ $website := .member.website | replaceRE "^(https?://)?(.*?)/?$" "$2" }}
         <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}">{{ $website }}</a></span>
@@ -50,10 +50,10 @@
         <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .member.github }}">{{ .member.github }}</a></span>
       {{ end }}
       {{ if .member.twitch }}
-        <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .member.twitch }}">@{{ .member.twitch }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "filled-twitch" }} <a href="https://twitch.tv/{{ .member.twitch }}">@{{ .member.twitch }}</a></span>
       {{ end }}
       {{ if .member.youtube }}
-        <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}">@{{ .member.youtube }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "filled-youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}">@{{ .member.youtube }}</a></span>
       {{ end }}
     </div>
   </div>
