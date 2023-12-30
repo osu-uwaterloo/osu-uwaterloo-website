@@ -53,7 +53,7 @@ body {
 }
 #container {
     height: calc(100% - var(--navbar-height));
-    max-width: 800px;
+    width: calc(min(800px, 100%)); // sadly that hugo scss compiler doesn't recognize min() as a built-in css function :(
     overflow-y: auto;
 	background-color: #2a2822;
 	padding: 0;
