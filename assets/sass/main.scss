@@ -15,13 +15,13 @@
         transform: translateY(0);
     }
     100% {
-        transform: translateY(100vw);
+        transform: translateY(calc(100vh + 310px));
     }
 }
 
 @keyframes container-in {
     0% {
-        transform: translateY(100vw);
+        transform: translateY(calc(100vh + 310px));
     }
     100% {
         transform: translateY(0);

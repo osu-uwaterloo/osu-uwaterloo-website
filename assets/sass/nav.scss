@@ -190,7 +190,7 @@ html:has(#main[type="page"]) {
     gap: 10px;
     position: relative;
 
-    > a {
+    > a , > .mobile-socials-close{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -211,5 +211,69 @@ html:has(#main[type="page"]) {
                 fill: var(--accent-colour);
             }
         }
+    }
+
+    > .mobile-socials-close {
+        display: none;
+    }
+}
+
+.nav-socials-mobile-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    svg {
+        font-size: 14px;
+        transition: fill 0.3s ease;
+    }
+    &:hover {
+        color: unset;
+        background-color: #fff3;
+        svg {
+            color: var(--accent-colour);
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .nav-socials {
+        position: absolute;
+        top: calc(0px - var(--navbar-height));
+        background: #202020;
+        width: 100%;
+        left: 0;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        .mobile-socials-close {
+            display: flex;
+            margin-left: auto;
+        }
+    }
+    .nav-socials-mobile-button {
+        display: flex;
+    }
+    .nav-socials-mobile-button:focus, .nav-socials-mobile-button:has(+ .nav-socials:focus) {
+        background-color: #fff3;
+    }
+    
+    .nav-socials-mobile-button:focus + .nav-socials,
+    .nav-socials:focus,
+    .nav-socials:focus-within {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateY(100%);
     }
 }
