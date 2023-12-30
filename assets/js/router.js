@@ -10,14 +10,14 @@ class Router {
 	}
 
 	async clickHandler(e) {
+		if (e.button !== 0) {
+			return;
+		}
 		const a = e.target.closest('a');
 		if (!a) {
 			return;
 		}
 		const url = a.href;
-		if (e.button !== 0) {
-			return;
-		}
 		if (!url || url.indexOf(location.origin) !== 0 || e.ctrlKey || e.metaKey) {
 			return;
 		}
@@ -26,8 +26,6 @@ class Router {
 			return;
 		}
 		e.preventDefault();
-		//console.log(e);
-		//console.log(url);
 		await this.navigate(url);
 	}
 
@@ -48,12 +46,9 @@ class Router {
 	 * @returns {Promise<void>}
 	*/
 	async loadHTML(url, previousPageType = null, html = null, scroll = null) {
-		//console.log(url);
-		html = html;
 		if (!html) html = this.cache[url];
 		if (!html) html = await fetch(url).then(response => response.text());
 		this.cache[url] = html;
-		//console.log(html);
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(html, 'text/html');
 		if (!document.startViewTransition) document.startViewTransition = (fn) => fn();
