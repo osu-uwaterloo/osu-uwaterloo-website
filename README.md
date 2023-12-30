@@ -8,7 +8,7 @@ The osu! cookie on the root page uses code borrowed from the [first-edition of t
 
 This website is generated using [Hugo](https://gohugo.io/). The theme was developed by [Feiri](https://osu.ppy.sh/users/3214844) ([GitHub](https://github.com/yfxu)).
 
-This website displays content in the [Rubik](https://fonts.google.com/specimen/Rubik/about) font, which is licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+This website displays content in the [Quicksand](https://fonts.google.com/specimen/Quicksand/about) font, which is licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 
 ## Developing locally
 
