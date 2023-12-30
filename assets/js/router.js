@@ -26,37 +26,41 @@ class Router {
 			return;
 		}
 		e.preventDefault();
-		console.log(e);
-		console.log(url);
+		//console.log(e);
+		//console.log(url);
 		await this.navigate(url);
 	}
 
 	async navigate(url) {
 		history.replaceState({
 			html: document.documentElement.outerHTML,
-			scroll: {
-				x: window.scrollX,
-				y: window.scrollY
-			}
+			scroll: document.querySelector('#container')?.scrollTop ?? null
 		}, null, location.href);
 		history.pushState(null, null, url);
 		await this.loadHTML(url);
 	}
 
-	async loadHTML(url, html = null) {
-		console.log(url);
+	async loadHTML(url, html = null, scroll = null) {
+		//console.log(url);
 		html = html;
 		if (!html) html = this.cache[url];
 		if (!html) html = await fetch(url).then(response => response.text());
 		this.cache[url] = html;
-		console.log(html);
+		//console.log(html);
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(html, 'text/html');
 		if (!document.startViewTransition) document.startViewTransition = (fn) => fn();
 		document.startViewTransition(() => {
+			document.title = doc.title;
 			// collapse the options in home page
 			doc.querySelector('#optionsContainer')?.classList?.remove('open');
+			// replace the main content
 			document.querySelector('#main').replaceWith(doc.querySelector('#main'));
+			// restore the scroll position
+			if (scroll !== null && document.querySelector('#container')) {
+				document.querySelector('#container').scrollTop = scroll;
+			}
+			// run scripts
 			const scripts = document.querySelectorAll('script');
 			for (const script of scripts) {
 				if (!script.src) {
@@ -67,10 +71,8 @@ class Router {
 	}
 
 	async popStateHandler(e) {
-		console.log(e);
 		if (e.state) {
-			await this.loadHTML(location.href, e.state.html);
-			window.scrollTo(e.state.scroll.x, e.state.scroll.y);
+			await this.loadHTML(location.href, e.state.html, e.state.scroll);
 		} else {
 			await this.loadHTML(location.href);
 		}
