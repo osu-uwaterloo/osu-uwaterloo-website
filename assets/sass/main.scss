@@ -34,12 +34,14 @@
     top: -300px;
     height: 300px;
     width: 100%;
-    filter: drop-shadow(0px -4px 5px rgba(0, 0, 0, 0.3));
+    //filter: drop-shadow(0px -4px 5px rgba(0, 0, 0, 0.3));
+    z-index: -1;
 
     div {
         position: absolute;
         inset: 0;
         pointer-events: none;
+        z-index: -1;
 
         &:nth-child(1) {
             background: #b3994c;

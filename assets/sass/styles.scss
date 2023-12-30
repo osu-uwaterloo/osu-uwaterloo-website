@@ -104,3 +104,16 @@ body {
 		}
 	}
 }
+
+::view-transition-group(container) {
+    z-index: 1;
+}
+::view-transition-group(nav) {
+    z-index: 2;
+}
+::view-transition-group(nav-indicator) {
+    z-index: 2;
+}
+::view-transition-group(logo) {
+    z-index: 3;
+}
