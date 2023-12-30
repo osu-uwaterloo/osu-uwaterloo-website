@@ -1,8 +1,6 @@
 {{ define "main" }}
-<main>
-  <div class="members-section">
-    <h1>{{ .Title }}</h1>
-
+  <h1 class="title">{{ .Title }}</h1>
+  <div class="content members-section">
     <h2>Executives</h2>
     <div class="members members-executives">
       {{ range $.Site.Params.executives }}

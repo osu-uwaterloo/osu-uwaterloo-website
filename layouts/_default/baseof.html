@@ -12,10 +12,10 @@
   <body>
     <div id="main" class="page">
       {{ partial "navbar" . }}
-      <div id="container">
+      <main id="container">
         {{- block "main" . }}
         {{- end }}
-      </div>
+      </main>
       {{ partial "footer" . }}
     </div>
   </body>

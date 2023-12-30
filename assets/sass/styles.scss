@@ -56,7 +56,38 @@ body {
     max-width: 800px;
     overflow-y: auto;
 	background-color: #2a2822;
-	padding: 30px 30px;
+	padding: 0;
 	box-sizing: border-box;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.4);
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		background-color: #2a2822;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #fff4;
+		border-radius: 2px;
+	}
+
+	> .title {
+		display: block;
+		padding: 20px 35px;
+		background-color: #3d3829;
+		margin: 0;
+		&.title-with-author {
+			> h1 {
+				margin: 0;
+			}
+			.title-author {
+				margin-top: 0.5em;
+				opacity: 0.8;
+			}
+		}
+	}
+	> .content {
+		display: block;
+		padding: 25px 35px;
+		background-color: #2a2822;
+		//line-height: 1.8;
+	}
 }
