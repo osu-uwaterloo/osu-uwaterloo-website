@@ -1,14 +1,7 @@
 <html>
   <head>
-    {{ $style := resources.Get "sass/styles.scss" | resources.ToCSS }}
     <title>{{ print .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    <link rel="icon" href="/images/logo.png" />
-    {{ $router := resources.Get "js/router.js" }}
-    {{ $router := $router | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $router.Permalink }}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8"> 
+    {{ partial "head" . }}
   </head>
   <body>
     <div id="main" type="home">
