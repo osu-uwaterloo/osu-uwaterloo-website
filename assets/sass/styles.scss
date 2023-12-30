@@ -82,11 +82,18 @@ body {
 		}
 
 		> .title {
-			display: block;
+			display: flex;
 			padding: 20px 35px;
 			background-color: #3d3829;
 			margin: 0;
+			align-items: center;
+			gap: 0.5em;
+			> svg {
+				width: 0.8em;
+				height: 0.8em;
+			}
 			&.title-with-author {
+				display: block;
 				> h1 {
 					margin: 0;
 				}

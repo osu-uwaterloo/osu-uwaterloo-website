@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1 class="title">events</h1>
+<h1 class="title">{{ partial "svg" "events" }}events</h1>
 <div class="content events">
   {{ range .Pages }}
   <a class="event" href="{{ .Permalink }}"><img src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}"></a>
