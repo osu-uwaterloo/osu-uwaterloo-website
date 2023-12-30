@@ -286,12 +286,12 @@ div.events {
         img {
             aspect-ratio: 21 / 9;
             object-fit: cover;
-            border-radius: 2px;
+            border-radius: 8px;
             width: 100%;
+            transition-duration: 150ms;
 
             &:hover {
-                filter: brightness(0.75);
-                transition-duration: 150ms;
+                filter: brightness(0.85);
             }
         }
     }
@@ -303,7 +303,21 @@ span.event-author {
 
 
 footer {
-    padding: 1em 0;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        svg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+    justify-content: flex-end;
 }
 
 a {
