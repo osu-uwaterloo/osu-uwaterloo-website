@@ -9,27 +9,36 @@
 
 <div class="member member-member" style="--bg: url('{{ $bg }}')">
   {{ if isset .member "altPfp" }}
-  <img class="pfp pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}">        
+    <img class="pfp pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}">        
   {{ else }}
-  <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .member.userId }}" alt="osu! profile picture for user {{ .member.username }}">
+    <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .member.userId }}" alt="osu! profile picture for user {{ .member.username }}">
   {{ end }}
   <div class="member-details">
-    <span class="member-username">
-      <a href="https://osu.ppy.sh/users/{{ .member.userId }}">{{ .member.username }}</a>
-      {{ if .member.name }}
-      <span class="member-name">({{ .member.name }})</span>
+    <div class="member-details-top">
+      {{ if isset .member "altPfp" }}
+        <img class="pfp pfp-mobile pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}" aria-hidden="true">
+      {{ else }}
+        <img class="pfp pfp-mobile pfp-member" src="https://a.ppy.sh/{{ .member.userId }}" alt="osu! profile picture for user {{ .member.username }}" aria-hidden="true">
       {{ end }}
-    </span>
-    {{ if and (eq .type "executive" ) (.member.role) }}
-      <span class="member-role">{{ .member.role }}</span>
-    {{ end }}
-    {{ if or (.member.term) (.member.program) (.member.year) }}
-    <span class="member-program">
-      {{ if .member.term }}{{ .member.term }}{{ end }}
-      {{ if .member.program }}{{ .member.program }}{{ end }}
-      {{ if .member.year }}{{ .member.year }}{{ end }}
-    </span>
-    {{ end }}
+      <div class="member-info">
+        <span class="member-username">
+          <a href="https://osu.ppy.sh/users/{{ .member.userId }}">{{ .member.username }}</a>
+          {{ if .member.name }}
+          <span class="member-name">({{ .member.name }})</span>
+          {{ end }}
+        </span>
+        {{ if and (eq .type "executive" ) (.member.role) }}
+          <span class="member-role">{{ .member.role }}</span>
+        {{ end }}
+        {{ if or (.member.term) (.member.program) (.member.year) }}
+          <span class="member-program">
+            {{ if .member.term }}{{ .member.term }}{{ end }}
+            {{ if .member.program }}{{ .member.program }}{{ end }}
+            {{ if .member.year }}{{ .member.year }}{{ end }}
+          </span>
+        {{ end }}
+      </div>
+    </div>
     {{ if .member.blurb }}<span class="member-blurb">{{ .member.blurb }}</span>{{ end }}
     <div class="member-socials">
       <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .member.discord }}</span>
