@@ -117,3 +117,9 @@ body {
 ::view-transition-group(logo) {
     z-index: 3;
 }
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		view-transition-name: unset !important;
+	}
+}
