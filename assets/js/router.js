@@ -37,10 +37,17 @@ class Router {
 			scroll: document.querySelector('#container')?.scrollTop ?? null
 		}, null, location.href);
 		history.pushState(null, null, url);
-		await this.loadHTML(url);
+		await this.loadHTML(url, document.querySelector('#main')?.getAttribute('type') ?? null);
 	}
 
-	async loadHTML(url, html = null, scroll = null) {
+	/**
+	 * @param {string} url the url of the page
+	 * @param {string} previousPageType 'home' or 'post', indicates the type of the previous page
+	 * @param {string} html the html content of the page, if not provided, it will be fetched from the url
+	 * @param {number} scroll the scroll position
+	 * @returns {Promise<void>}
+	*/
+	async loadHTML(url, previousPageType = null, html = null, scroll = null) {
 		//console.log(url);
 		html = html;
 		if (!html) html = this.cache[url];
@@ -50,12 +57,15 @@ class Router {
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(html, 'text/html');
 		if (!document.startViewTransition) document.startViewTransition = (fn) => fn();
-		document.startViewTransition(() => {
+		const transition = document.startViewTransition(() => {
 			document.title = doc.title;
 			// collapse the options in home page
 			doc.querySelector('#optionsContainer')?.classList?.remove('open');
 			// replace the main content
 			document.querySelector('#main').replaceWith(doc.querySelector('#main'));
+			// set previous page type for transition
+			document.querySelector('#main').setAttribute('from', previousPageType);
+			document.querySelector('#main').classList.remove('transition-done');
 			// restore the scroll position
 			if (scroll !== null && document.querySelector('#container')) {
 				document.querySelector('#container').scrollTop = scroll;
@@ -67,14 +77,27 @@ class Router {
 					eval(script.innerHTML);
 				}
 			}
-		});
+		})
+		try {
+			await transition.finished;
+		} finally {
+			document.querySelector('#main').classList.add('transition-done');
+		}
 	}
 
 	async popStateHandler(e) {
 		if (e.state) {
-			await this.loadHTML(location.href, e.state.html, e.state.scroll);
+			await this.loadHTML(
+				location.href,
+				document.querySelector('#main')?.getAttribute('type') ?? null,
+				e.state.html,
+				e.state.scroll
+			);
 		} else {
-			await this.loadHTML(location.href);
+			await this.loadHTML(
+				location.href,
+				document.querySelector('#main')?.getAttribute('type') ?? null
+			);
 		}
 	}
 

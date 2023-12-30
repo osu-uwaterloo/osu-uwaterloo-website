@@ -10,45 +10,15 @@
 	z-index: 1;
 	transition: transform 0.3s ease, box-shadow 0.2s ease;
 	view-transition-name: nav;
-
-	&:hover {
-		box-shadow: 0 0 70px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.25);
-		transition: transform 0.3s ease, box-shadow 0.6s ease;
-	}
-}
-
-
-#main.home {
-    .nav {
-        transform: translateY(-100%);
-		img.logo {
-			view-transition-name: unset;
-		}
-    }
-}
-html:has(#main.home) {
-	&::view-transition-old(nav) {
-		opacity: 1 !important;
-	}
-	&::view-transition-new(nav) {
-		display: none;
-	}
-}
-html:has(#main.page) {
-	&::view-transition-old(nav) {
-		display: none;
-	}
-	&::view-transition-new(nav) {
-		opacity: 1 !important;
-	}
-}
-
-
-.nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+	&:hover {
+		box-shadow: 0 0 120px rgba(0, 0, 0, 0.8), 0 0 100px rgba(0, 0, 0, 0.6);
+		transition: transform 0.3s ease, box-shadow 0.65s ease;
+	}
 
     a {
         color: unset;
@@ -58,51 +28,188 @@ html:has(#main.page) {
     svg {
         height: 1.5em;
     }
+}
 
-    div.nav-navigation {
-        display: flex;
-        flex-direction: row;
-        column-gap: 0.75em;
-        align-items: center;
+.nav-navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
 
-        img.logo {
-            width: 3em;
-            height: 3em;
-			view-transition-name: logo;
-
-            &:hover {
-                filter: brightness(0.8);
-                transition-duration: 150ms;
-            }
-        }
-
-        div.nav-navigation-text-links {
-            display: flex;
-            flex-direction: row;
-            column-gap: 0.25em;
-            
-            a {
-                border-radius: 4px;
-                text-decoration: none;
-                padding: 0.5em 1em;
-    
-                &:hover {
-                    color: var(--accent-colour);
-                    background-color: var(--background-dark-colour);
-                    transition-duration: 150ms;
-                }
-            }
+    img.logo {
+        width: 40px;
+        height: 40px;
+        view-transition-name: logo;
+        &:hover {
+            filter: brightness(0.8);
+            transition-duration: 150ms;
         }
     }
+}
 
-    div.nav-socials {
+.nav-sections {
+    display: flex;
+    align-items: center;
+    height: var(--navbar-height);
+    gap: 15px;
+    position: relative;
+
+    > a {
         display: flex;
-        flex-direction: row;
-        column-gap: 1em;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        position: relative;
+        &:hover {
+            color: unset;
+            background-color: #fff3;
+            &::before, &::after {
+                opacity: 1;
+            }
+        }
+        &::before {
+            content: attr(text);
+            position: absolute;
+            top: 54px;
+            left: 6px;
+            font-size: 22px;
+            font-weight: bold;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        &::after {
+            content: attr(desc);
+            position: absolute;
+            top: 84px;
+            left: 6px;
+            pointer-events: none;
+            width: 300px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+   &::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: calc(10px + (40px + 15px) * var(--pos));
+        width: 20px;
+        height: 3px;
+        border-radius: 8px;
+        background-color: var(--accent-colour);
+        display: none;
+        --pos: -1;
+        transition: left 0.3s ease;
+        view-transition-name: nav-indicator;
+    }
+    &[data-section="about"] {
+        > a[text="about"] svg {
+            color: var(--accent-colour);
+        }
+        &::after {
+            --pos: 0;
+            display: block;
+        }
+    }
+    &[data-section="members"] {
+        > a[text="members"] svg {
+            color: var(--accent-colour);
+        }
+        &::after {
+            --pos: 1;
+            display: block;
+        }
+    }
+    &[data-section="events"] {
+        > a[text="events"] svg {
+            color: var(--accent-colour);
+        }
+        &::after {
+            --pos: 2;
+            display: block;
+        }
+    }
+}
 
-        svg:hover {
-            fill: var(--accent-colour);
-            transition-duration: 150ms;
+#main[type="home"] {
+    .nav {
+        transform: translateY(-100%);
+		img.logo {
+			view-transition-name: unset;
+		}
+    }
+}
+
+::view-transition-old(nav-indicator) {
+    display: none;
+}
+::view-transition-new(nav-indicator) {
+    opacity: 1 !important;
+}
+#main[type="page"][from="home"]:not(.transition-done) {
+    .nav-sections::after {
+        view-transition-name: unset;
+    }
+}
+
+html:has(#main[type="home"]) {
+	&::view-transition-old(nav) {
+		opacity: 1 !important;
+	}
+	&::view-transition-new(nav) {
+		display: none;
+	}
+}
+html:has(#main[type="page"]) {
+	&::view-transition-old(nav) {
+		display: none;
+	}
+	&::view-transition-new(nav) {
+		opacity: 1 !important;
+	}
+}
+
+#main[type="page"][from="page"]:not(.transition-done) {
+    .nav-navigation img.logo {
+        view-transition-name: unset;
+    }
+}
+
+
+.nav-socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: var(--navbar-height);
+    gap: 10px;
+    position: relative;
+
+    > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        position: relative;
+        svg {
+            fill: var(--font-colour);
+            font-size: 14px;
+            transition: fill 0.3s ease;
+        }
+        &:hover {
+            color: unset;
+            background-color: #fff3;
+            svg {
+                fill: var(--accent-colour);
+            }
         }
     }
 }

@@ -1,16 +1,16 @@
 <nav class="nav">
     <div class="nav-navigation">
         <a href="/"><img class="logo" src="/images/logo.png" alt="osu!UWaterloo logo"></a>
-        <div class="nav-navigation-text-links">
-            <a href="/about">about</a>
-            <a href="/members">members</a>
-            <a href="/events">events</a>
+        <div class="nav-sections" data-section="{{ .Section }}">
+            <a href="/about" text="about" desc="See who we are and what we do.">{{ partial "svg" "info" }}</a>
+            <a href="/members" text="members" desc="See who's in the club.">{{ partial "svg" "members" }}</a>
+            <a href="/events" text="events" desc="See what events we're hosting.">{{ partial "svg" "events" }}</a>
         </div>
     </div>
     <div class="nav-socials">
-        <a href="{{ $.Site.Params.urls.discord }}">{{ partial "svg" "discord" }}</a>
-        <a href="{{ $.Site.Params.urls.youtube }}">{{ partial "svg" "youtube" }}</a>
-        <a href="{{ $.Site.Params.urls.twitch }}">{{ partial "svg" "twitch" }}</a>
-        <a href="{{ $.Site.Params.urls.email }}">{{ partial "svg" "mail" }}</a>
+        <a href="{{ $.Site.Params.urls.discord }}" target="_blank">{{ partial "svg" "discord" }}</a>
+        <a href="{{ $.Site.Params.urls.youtube }}" target="_blank">{{ partial "svg" "youtube" }}</a>
+        <a href="{{ $.Site.Params.urls.twitch }}" target="_blank">{{ partial "svg" "twitch" }}</a>
+        <a href="{{ $.Site.Params.urls.email }}" target="_blank">{{ partial "svg" "mail" }}</a>
     </div>
 </nav>

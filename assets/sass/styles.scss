@@ -14,7 +14,7 @@
 	--accent-light-colour: var(--yellow-1);
 	--accent-colour: var(--yellow-2);
 	--navbar-colour: #191919;
-	--navbar-height: 70px;
+	--navbar-height: 56px;
 }
 
 
@@ -53,7 +53,10 @@ body {
 }
 #container {
     height: calc(100% - var(--navbar-height));
-    width: calc(min(800px, 100%)); // sadly that hugo scss compiler doesn't recognize min() as a built-in css function :(
+    width: 75vw;
+    min-width: calc(min(800px, 100%));
+    max-width: calc(min(1000px, 100%));
+    // sadly that hugo scss compiler doesn't recognize min() as a built-in css function :(
     overflow-y: auto;
 	background-color: #2a2822;
 	padding: 0;
@@ -65,8 +68,11 @@ body {
 		background-color: #2a2822;
 	}
 	&::-webkit-scrollbar-thumb {
-		background-color: #fff4;
+		background-color: #fff3;
 		border-radius: 2px;
+		&:hover {
+			background-color: #fff4;
+		}
 	}
 
 	> .title {

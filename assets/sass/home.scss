@@ -8,6 +8,7 @@
     justify-content: center;
     font-size: 1.25vw;
     overflow: hidden;
+    margin-top: calc(0px - var(--navbar-height));
     * {
         user-select: none;
     }
