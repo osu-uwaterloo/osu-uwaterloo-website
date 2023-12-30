@@ -15,10 +15,13 @@ class Router {
 			return;
 		}
 		const url = a.href;
+		if (e.button !== 0) {
+			return;
+		}
 		if (!url || url.indexOf(location.origin) !== 0 || e.ctrlKey || e.metaKey) {
 			return;
 		}
-		if (e.button !== 0) {
+		if (url === location.href) {
 			return;
 		}
 		e.preventDefault();
@@ -48,11 +51,8 @@ class Router {
 		console.log(html);
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(html, 'text/html');
-		/*document.head.replaceWith(doc.head);
-		document.body.replaceWith(doc.body);*/
 		if (!document.startViewTransition) document.startViewTransition = (fn) => fn();
 		document.startViewTransition(() => {
-			//document.documentElement.replaceWith(doc.documentElement);
 			// collapse the options in home page
 			doc.querySelector('#optionsContainer')?.classList?.remove('open');
 			document.querySelector('#main').replaceWith(doc.querySelector('#main'));
