@@ -21,7 +21,8 @@ class Router {
 		if (!url || url.indexOf(location.origin) !== 0 || e.ctrlKey || e.metaKey) {
 			return;
 		}
-		if (url === location.href) {
+		if (new URL(url).pathname.replace(/\/$/, '') === location.pathname.replace(/\/$/, '')) {
+			e.preventDefault();
 			return;
 		}
 		e.preventDefault();
