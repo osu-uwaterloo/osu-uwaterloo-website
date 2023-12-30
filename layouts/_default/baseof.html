@@ -1,25 +1,22 @@
 <html>
   <head>
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
+    {{ $style := resources.Get "sass/styles.scss" | resources.ToCSS }}
     <title>{{ print .Title " | " .Site.Title }}</title>
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     <link rel="icon" href="/images/logo.png" />
+    {{ $router := resources.Get "js/router.js" }}
+    {{ $router := $router | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $router.Permalink }}"></script>
     <meta charset="UTF-8"> 
   </head>
   <body>
-    <br>
-    <div class="container">
+    <div id="main" class="page">
       {{ partial "navbar" . }}
-      <hr>
-    </div>
-    <div class="container">
-      {{- block "main" . }}
-      {{- end }}
-    </div>
-    <div class="container">
-      <hr>
+      <div id="container">
+        {{- block "main" . }}
+        {{- end }}
+      </div>
       {{ partial "footer" . }}
     </div>
-    <br>
   </body>
 </html>

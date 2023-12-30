@@ -80,6 +80,8 @@ img#logo {
     vertical-align: middle;
     cursor: pointer;
     height: 30em;
+    view-transition-name: logo;
+    z-index: 2;
 }
 
 img#logo:hover {

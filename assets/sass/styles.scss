@@ -1,0 +1,62 @@
+:root {
+	--white: #fff;
+	--gray-1: #ddd;
+	--gray-2: #999;
+	--gray-3: #333;
+	--gray-4: #222;
+	--yellow-1: #f3e072;
+	--yellow-2: #e8ca21;
+
+	--font-colour: var(--gray-1);
+	--muted-font-colour: var(--gray-2);
+	--background-colour: var(--gray-3);
+	--background-dark-colour: var(--gray-4);
+	--accent-light-colour: var(--yellow-1);
+	--accent-colour: var(--yellow-2);
+	--navbar-colour: #191919;
+	--navbar-height: 70px;
+}
+
+
+@import "./home.scss";
+@import "./nav.scss";
+@import "./main.scss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+html {
+    background-color: var(--background-colour);
+    background-image: url("/images/e5-stairs-triangles.png");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+}
+
+body {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+    color: var(--gray-1);
+    margin: 0;
+    overflow: hidden;
+}
+#main {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin-top: var(--navbar-height);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&.home {
+		margin-top: 0;
+	}
+}
+#container {
+    height: calc(100% - var(--navbar-height));
+    max-width: 800px;
+    overflow-y: auto;
+	background-color: #2a2822;
+	padding: 30px 30px;
+	box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.4);
+}
