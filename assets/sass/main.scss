@@ -1,5 +1,6 @@
-#container {
+#card {
     view-transition-name: container;
+    position: relative;
 }
 
 ::view-transition-old(container) {
@@ -26,6 +27,42 @@
         transform: translateY(0);
     }
 }
+
+.card-deco {
+    position: absolute;
+    left: 0;
+    top: -300px;
+    height: 300px;
+    width: 100%;
+    filter: drop-shadow(0px -4px 5px rgba(0, 0, 0, 0.3));
+
+    div {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        &:nth-child(1) {
+            background: #b3994c;
+            clip-path: polygon(0 12%, 100% 85%, 100% 100%, 0 100%);
+        }
+
+        &:nth-child(2) {
+            background: #d0c293;
+            clip-path: polygon(0 90%, 100% 25%, 100% 100%, 0 100%);
+        }
+
+        &:nth-child(3) {
+            background: #3e382a;
+            clip-path: polygon(0 50%, 100% 90%, 100% 100%, 0 100%);
+        }
+
+        &:nth-child(4) {
+            background: #4d4633;
+            clip-path: polygon(0 75%, 100% 60%, 100% 100%, 0 100%);
+        }
+    }
+}
+
 
 div.members-section{
     margin-bottom: 1em;

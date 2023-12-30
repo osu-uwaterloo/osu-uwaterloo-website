@@ -12,10 +12,15 @@
   <body>
     <div id="main" type="page">
       {{ partial "navbar" . }}
-      <main id="container">
-        {{- block "main" . }}
-        {{- end }}
-      </main>
+      <div id="card">
+        <div class="card-deco">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <main id="container">
+          {{- block "main" . }}
+          {{- end }}
+        </main>
+      </div>
       {{ partial "footer" . }}
     </div>
   </body>
