@@ -200,16 +200,12 @@ html:has(#main[type="page"]) {
         transition: background-color 0.3s ease, color 0.3s ease;
         position: relative;
         svg {
-            //fill: var(--font-colour);
             font-size: 14px;
             transition: fill 0.3s ease;
         }
         &:hover {
             color: unset;
             background-color: #fff3;
-            svg {
-                //fill: var(--accent-colour);
-            }
         }
     }
 

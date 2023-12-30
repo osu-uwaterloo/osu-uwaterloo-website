@@ -1,8 +1,81 @@
-#card {
-    view-transition-name: container;
-    position: relative;
-}
+@import "./members.scss";
+@import "./events.scss";
 
+#main {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin-top: var(--navbar-height);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&.home {
+		margin-top: 0;
+	}
+}
+#card {
+    height: calc(100% - var(--navbar-height));
+    width: 75vw;
+    min-width: calc(min(800px, 100%));
+    max-width: calc(min(1080px, 100%));
+    // sadly that hugo scss compiler doesn't recognize min() as a built-in css function :(
+    overflow-y: visible;
+	background-color: #2a2822;
+	padding: 0;
+    position: relative;
+	box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.4);
+    view-transition-name: container;
+
+	#container {
+		height: 100%;
+		width: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		&::-webkit-scrollbar {
+			width: 10px;
+			background-color: #2a2822;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #fff3;
+			border-radius: 2px;
+			&:hover {
+				background-color: #fff4;
+			}
+		}
+
+		> .title {
+			display: flex;
+			padding: 20px 35px;
+			background-color: #3d3829;
+			margin: 0;
+			align-items: center;
+			gap: 0.5em;
+			> svg {
+				width: 0.8em;
+				height: 0.8em;
+			}
+			&.title-with-author {
+				display: block;
+				> h1 {
+					margin: 0;
+				}
+				.title-author {
+					margin-top: 0.5em;
+					opacity: 0.8;
+				}
+			}
+		}
+		> .content {
+			display: block;
+			padding: 25px 35px;
+			background-color: #2a2822;
+			//line-height: 1.8;
+		}
+	}
+}
 ::view-transition-old(container) {
     animation: container-out 0.5s ease;
 }
@@ -59,212 +132,6 @@
     }
 }
 
-
-.members-section {
-    h2 {
-        font-size: 28px;
-    }
-}
-
-.member {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    margin-bottom: 20px;
-    color: #fcfcfc;
-    * {
-        z-index: 1;
-    }
-    align-items: center;
-    gap: 20px;
-    flex-direction: row;
-    padding: 12px 20px;
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        inset: -16px;
-        background-image: var(--bg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        filter: blur(16px) brightness(0.8);
-    }
-    a {
-        color: #fff2aa;
-        text-decoration: none !important;
-        transition: filter 0.2s ease;
-        &:hover {
-            filter: brightness(0.9);
-        }
-    }
-    
-    .pfp {
-        border-radius: 8px;
-        object-fit: cover;
-        width: 80px;
-        height: 80px;
-        aspect-ratio: 1/1;
-        min-width: 80px;
-        min-height: 80px;
-        user-select: none;
-    }
-
-    .member-details {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25em;
-        gap: 0.2lh;
-        .member-details-top {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: center;
-            .pfp-mobile {
-                display: none;
-            }
-            .member-info {
-                display: flex;
-                flex-direction: column;
-                gap: 0.25em;
-                gap: 0.2lh;
-                .member-username {
-                    font-size: 22px;
-                    font-weight: bold;
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    align-items: center;
-                    column-gap: 0.25em;
-                    .member-name {
-                        font-weight: normal;
-                        opacity: .7;
-                        font-size: 90%;
-                    }
-                }
-                .member-program {
-                    font-size: 16px;
-                    opacity: .7;
-                }
-            }
-        }
-        .member-blurb {
-            line-height: 1.25;
-            margin-top: 2px;
-        }
-        .member-socials {
-            display: flex;
-            flex-direction: row;
-            column-gap: 12px;
-            font-size: 16px;
-            align-items: center;
-            margin-top: 6px;
-            flex-wrap: wrap;
-            .member-social-link {
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                gap: 6px;
-                opacity: .8;
-                svg {
-                    width: 16px;
-                    height: 16px;
-                    fill: #fffe;
-                }
-            }
-        }
-    }
-}
-
-.members {
-    grid-column-gap: 18px;
-    grid-row-gap: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-}
-
-@media (max-width: 500px) {
-    .members {
-        margin-left: -20px;
-        margin-right: -20px;
-        display: flex;
-        flex-direction: column;
-        .member-details-top {
-            margin-bottom: 10px;
-        }
-        .pfp {
-            min-width: unset !important;
-            min-height: unset !important;
-            max-width: 20vw !important;
-            max-height: 20vw !important;
-        }
-        &.members-executives {
-            .pfp {
-                max-width: 25vw !important;
-                max-height: 25vw !important;
-            }
-        }
-        .pfp-mobile {
-            display: block !important;
-        }
-        .pfp:not(.pfp-mobile) {
-            display: none;
-        }
-    }
-}
-
-.members.members-executives {
-    grid-template-columns: 1fr;
-
-    .member {
-        .pfp {
-            width: 120px;
-            height: 120px;
-            min-width: 120px;
-            min-height: 120px;
-        }
-        .member-details {
-            .member-username {
-                font-size: 28px;
-            }
-            .member-role {
-                font-size: 20px;
-                margin-top: -2px;
-                font-weight: bold;
-                opacity: .8;
-            }
-        }
-    }
-}
-
-
-
-div.events {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(21em, 2fr));
-    gap: 1em;
-    margin-bottom: 1em;
-
-    a.event {
-        img {
-            aspect-ratio: 21 / 9;
-            object-fit: cover;
-            border-radius: 8px;
-            width: 100%;
-            transition-duration: 150ms;
-
-            &:hover {
-                filter: brightness(0.85);
-            }
-        }
-    }
-}
-
-span.event-author {
-    margin-top: -1em;
-}
 
 
 footer {
@@ -328,33 +195,4 @@ footer {
         }
     }
 
-}
-
-img.event-image {
-    width: 100%;
-    aspect-ratio: 21 / 9;
-    object-fit: cover;
-}
-
-h1.title-with-author {
-    margin-bottom: 0;
-}
-
-svg {
-//    fill: var(--font-colour);
-    height: 1em;
-    align-items: center;
-}
-
-hr {
-    border-top: 2px solid var(--background-dark-colour);
-    border-bottom: none;
-    border-right: none;
-    border-left: none;
-    width: 100%;
-    margin: 0;
-}
-
-p {
-    line-height: 1.5em;
 }
