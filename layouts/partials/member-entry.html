@@ -1,4 +1,13 @@
-<div class="member member-member">
+{{ $randomNum := index (shuffle (seq 1 8)) 0 }}
+{{ if isset .member "userId" }}
+  {{$randomNum = mod .member.userId 8 | add 1}}
+{{end}}
+{{$bg := printf "https://osu.ppy.sh/images/headers/profile-covers/c%d.jpg" $randomNum }}
+{{if isset .member "bg"}}
+  {{$bg = .member.bg}}
+{{end}}
+
+<div class="member member-member" style="--bg: url('{{ $bg }}')">
   {{ if isset .member "altPfp" }}
   <img class="pfp pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}">        
   {{ else }}
@@ -22,8 +31,7 @@
     </span>
     {{ end }}
     {{ if .member.blurb }}<span class="member-blurb">{{ .member.blurb }}</span>{{ end }}
-    <div class="member-socials-flex">
-      <span class="member-socials">
+    <div class="member-socials">
       <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .member.discord }}</span>
       {{ if .member.website }}
         {{ $website := .member.website | replaceRE "^(https?://)?(.*?)/?$" "$2" }}
@@ -38,7 +46,6 @@
       {{ if .member.youtube }}
         <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}">@{{ .member.youtube }}</a></span>
       {{ end }}
-      </span>
     </div>
   </div>
 </div>
