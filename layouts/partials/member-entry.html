@@ -23,7 +23,7 @@
       {{ end }}
       <div class="member-info">
         <span class="member-username">
-          <a href="https://osu.ppy.sh/users/{{ .member.userId }}">{{ .member.username }}</a>
+          <a href="https://osu.ppy.sh/users/{{ .member.userId }}" target="_blank" rel="noopener noreferrer">{{ .member.username }}</a>
           {{ if .member.name }}
           <span class="member-name">({{ .member.name }})</span>
           {{ end }}
@@ -45,16 +45,16 @@
       <span class="member-social-link">{{ partial "svg" "filled-discord" }} @{{ .member.discord }}</span>
       {{ if .member.website }}
         {{ $website := .member.website | replaceRE "^(https?://)?(.*?)/?$" "$2" }}
-        <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}">{{ $website }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}" target="_blank" rel="noopener noreferrer">{{ $website }}</a></span>
       {{ end }}
       {{ if .member.github }}
-        <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .member.github }}">{{ .member.github }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .member.github }}" target="_blank" rel="noopener noreferrer">{{ .member.github }}</a></span>
       {{ end }}
       {{ if .member.twitch }}
-        <span class="member-social-link">{{ partial "svg" "filled-twitch" }} <a href="https://twitch.tv/{{ .member.twitch }}">@{{ .member.twitch }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "filled-twitch" }} <a href="https://twitch.tv/{{ .member.twitch }}" target="_blank" rel="noopener noreferrer">@{{ .member.twitch }}</a></span>
       {{ end }}
       {{ if .member.youtube }}
-        <span class="member-social-link">{{ partial "svg" "filled-youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}">@{{ .member.youtube }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "filled-youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}" target="_blank" rel="noopener noreferrer">@{{ .member.youtube }}</a></span>
       {{ end }}
     </div>
   </div>
