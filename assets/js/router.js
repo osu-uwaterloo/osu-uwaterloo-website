@@ -150,7 +150,7 @@ function transitionPolyfill(url) {
 				{ transform: 'translateY(0)'},
 				{ transform: 'translateY(calc(100vh + 310px))' }
 			], {
-				duration: 250,
+				duration: 350,
 				easing: 'ease',
 				fill: 'both'
 			}).onfinish = resolve;
