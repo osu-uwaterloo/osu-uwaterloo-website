@@ -1,13 +1,14 @@
 {{ $randomNum := index (shuffle (seq 1 8)) 0 }}
 {{ if isset .member "userId" }}
-  {{$randomNum = mod .member.userId 8 | add 1}}
-{{end}}
-{{$bg := printf "https://osu.ppy.sh/images/headers/profile-covers/c%d.jpg" $randomNum }}
-{{if isset .member "bg"}}
-  {{$bg = .member.bg}}
-{{end}}
+  {{$randomNum = mod .member.userId 8 | add 1 }}
+{{ end }}
+{{ $fallbackCover := printf "https://osu.ppy.sh/images/headers/profile-covers/c%d.jpg" $randomNum }}
+{{ $cover := printf "https://ocover.vercel.app/%d" .member.userId }}
+{{ if isset .member "bg" }}
+  {{ $cover = .member.bg }}
+{{ end }}
 
-<div class="member member-member" style="--bg: url('{{ $bg }}')">
+<div class="member member-member" style="--cover: url('{{ $cover }}'), url('{{ $fallbackCover }}')">
   {{ if isset .member "altPfp" }}
     <img class="pfp pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}">        
   {{ else }}

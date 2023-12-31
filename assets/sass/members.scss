@@ -22,12 +22,16 @@
         content: '';
         display: block;
         position: absolute;
-        inset: -16px;
-        background-image: var(--bg);
+        inset: -8px;
+        background-image: var(--cover);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        filter: blur(16px) brightness(0.8);
+        filter: blur(8px) brightness(0.75);
+        transition: filter 0.3s ease;
+    }
+    &:hover::before {
+        filter: blur(0px) brightness(0.6);
     }
     a {
         color: var(--user-card-link-colour);
