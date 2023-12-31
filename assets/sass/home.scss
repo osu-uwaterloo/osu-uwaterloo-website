@@ -130,3 +130,21 @@ img#logo-overlay {
 .optionImage {
     height: 100%;
 }
+
+
+@supports not (view-transition-name: test) {
+    body[type="home"][from="page"] #buttonWrapper {
+        animation: cookie-fade-in-fallback 0.3s ease;
+    }
+    
+    @keyframes cookie-fade-in-fallback {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

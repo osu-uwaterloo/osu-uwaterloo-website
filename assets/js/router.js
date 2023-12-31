@@ -1,3 +1,6 @@
+const supportViewTransition = document.startViewTransition;
+if (!supportViewTransition) document.startViewTransition = (fn) => fn();
+
 class Router {
 	constructor() {
 		if (window.Router) {
@@ -46,12 +49,17 @@ class Router {
 	 * @returns {Promise<void>}
 	*/
 	async loadHTML(url, previousPageType = null, html = null, scroll = null) {
-		if (!html) html = this.cache[url];
-		if (!html) html = await fetch(url).then(response => response.text());
+		await Promise.all([
+			new Promise(async resolve => {
+				if (!html) html = this.cache[url];
+				if (!html) html = await fetch(url).then(response => response.text());
+				resolve();
+			}),
+			transitionPolyfill(url)
+		]);
 		this.cache[url] = html;
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(html, 'text/html');
-		if (!document.startViewTransition) document.startViewTransition = (fn) => fn();
 		const transition = document.startViewTransition(() => {
 			document.title = doc.title;
 			// collapse the options in home page
@@ -81,7 +89,9 @@ class Router {
 		})
 		try {
 			await transition.finished;
-		} finally {
+		}
+		catch (e) {}
+		finally {
 			document.body.classList.add('transition-done');
 		}
 	}
@@ -109,3 +119,54 @@ class Router {
 }
 
 Router.init();
+
+
+
+function transitionPolyfill(url) {
+	if (supportViewTransition) return;
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	const path = new URL(url).pathname.replace(/\/$/, '');
+	const type = path.length ? "page" : "home";
+	const previousPageType = document.body.getAttribute('type') ?? null;
+	if (type == "page" && previousPageType == "page") {
+		const card = document.querySelector('#card');
+		if (!card) return;
+		return new Promise(resolve => {
+			card.animate([
+				{ transform: 'translateY(0)', opacity: 1 },
+				{ transform: 'translateY(min(60vh, 600px))', opacity: 0 }
+			], {
+				duration: 250,
+				easing: 'ease',
+				fill: 'both'
+			}).onfinish = resolve;
+		});
+	}
+	if (type == "home" && previousPageType == "page") {
+		const card = document.querySelector('#card');
+		if (!card) return;
+		return new Promise(resolve => {
+			card.animate([
+				{ transform: 'translateY(0)'},
+				{ transform: 'translateY(calc(100vh + 310px))' }
+			], {
+				duration: 250,
+				easing: 'ease',
+				fill: 'both'
+			}).onfinish = resolve;
+		});
+	}
+	if (type == "page" && previousPageType == "home") {
+		const cookie = document.querySelector('#buttonWrapper');
+		return new Promise(resolve => {
+			cookie.animate([
+				{ transform: 'scale(1)', opacity: 1 },
+				{ transform: 'scale(0.9)', opacity: 0 }
+			], {
+				duration: 250,
+				easing: 'ease',
+				fill: 'both'
+			}).onfinish = resolve;
+		});
+	}
+}

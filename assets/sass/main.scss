@@ -103,6 +103,33 @@
     }
 }
 
+@supports not (view-transition-name: test) {
+    #card {
+        animation: container-in-fallback 0.5s ease;
+    }
+    body[type="page"][from="page"] #card {
+        animation: container-out-fallback-crosspage 0.3s ease;
+    }
+    @keyframes container-in-fallback {
+        0% {
+            transform: translateY(calc(100vh + 310px));
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes container-out-fallback-crosspage {
+        0% {
+            transform: translateY(calc(min(60vh, 600px)));
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
 .card-deco {
     position: absolute;
     left: 0;
@@ -196,5 +223,4 @@ footer {
             width: 100%;
         }
     }
-
 }
