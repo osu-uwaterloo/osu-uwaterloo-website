@@ -30,7 +30,7 @@
         filter: blur(16px) brightness(0.8);
     }
     a {
-        color: #fff2aa;
+        color: var(--user-card-link-colour);
         text-decoration: none !important;
         transition: filter 0.2s ease;
         &:hover {

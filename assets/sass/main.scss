@@ -21,7 +21,7 @@
     max-width: calc(min(1080px, 100%));
     // sadly that hugo scss compiler doesn't recognize min() as a built-in css function :(
     overflow-y: visible;
-	background-color: #2a2822;
+	background-color: var(--main-card-background-colour);
 	padding: 0;
     position: relative;
 	box-sizing: border-box;
@@ -36,7 +36,7 @@
 
 		&::-webkit-scrollbar {
 			width: 10px;
-			background-color: #2a2822;
+			background-color: var(--main-card-background-colour);
 		}
 		&::-webkit-scrollbar-thumb {
 			background-color: #fff3;
@@ -49,7 +49,7 @@
 		> .title {
 			display: flex;
 			padding: 20px 35px;
-			background-color: #3d3829;
+			background-color: var(--main-card-title-background-colour);
 			margin: 0;
 			align-items: center;
 			gap: 0.5em;
@@ -71,7 +71,7 @@
 		> .content {
 			display: block;
 			padding: 25px 35px;
-			background-color: #2a2822;
+			background-color: var(--main-card-background-colour);
 			//line-height: 1.8;
 		}
 	}
