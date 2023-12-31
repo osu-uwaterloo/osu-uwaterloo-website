@@ -3,9 +3,9 @@
     <title>{{ print .Site.Title }}</title>
     {{ partial "head" . }}
   </head>
-  <body>
-    <div id="main" type="home">
-      {{ partial "navbar" . }}
+  <body type="home">
+    {{ partial "navbar" . }}
+    <div id="main">
       <div id="osuButtonContainer">
         <div id="buttonWrapper">
           <div id="logoContainer" onClick="document.querySelector('#optionsContainer').classList.toggle('open')">

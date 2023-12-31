@@ -146,7 +146,7 @@
     }
 }
 
-#main[type="home"] {
+body[type="home"] {
     .nav {
         transform: translateY(-100%);
 		img.logo {
@@ -161,13 +161,13 @@
 ::view-transition-new(nav-indicator) {
     opacity: 1 !important;
 }
-#main[type="page"][from="home"]:not(.transition-done) {
+body[type="page"][from="home"]:not(.transition-done) {
     .nav-sections::after {
         view-transition-name: unset;
     }
 }
 
-html:has(#main[type="home"]) {
+html:has(body[type="home"]) {
 	&::view-transition-old(nav) {
 		opacity: 1 !important;
 	}
@@ -175,7 +175,7 @@ html:has(#main[type="home"]) {
 		display: none;
 	}
 }
-html:has(#main[type="page"]) {
+html:has(body[type="page"]) {
 	&::view-transition-old(nav) {
 		display: none;
 	}
@@ -184,7 +184,7 @@ html:has(#main[type="page"]) {
 	}
 }
 
-#main[type="page"][from="page"]:not(.transition-done) {
+body[type="page"][from="page"]:not(.transition-done) {
     .nav-navigation img.logo {
         view-transition-name: unset;
     }

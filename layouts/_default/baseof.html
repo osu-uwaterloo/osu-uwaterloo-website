@@ -3,9 +3,9 @@
     <title>{{ print .Title " | " .Site.Title }}</title>
     {{ partial "head" . }}
   </head>
-  <body>
-    <div id="main" type="page">
-      {{ partial "navbar" . }}
+  <body type="page">
+    {{ partial "navbar" . }}
+    <div id="main">
       <div id="card">
         <div class="card-deco">
           <div></div><div></div><div></div><div></div>

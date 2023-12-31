@@ -35,7 +35,7 @@ class Router {
 			scroll: document.querySelector('#container')?.scrollTop ?? null
 		}, null, location.href);
 		history.pushState(null, null, url);
-		await this.loadHTML(url, document.querySelector('#main')?.getAttribute('type') ?? null);
+		await this.loadHTML(url, document.body.getAttribute('type') ?? null);
 	}
 
 	/**
@@ -58,9 +58,15 @@ class Router {
 			doc.querySelector('#optionsContainer')?.classList?.remove('open');
 			// replace the main content
 			document.querySelector('#main').replaceWith(doc.querySelector('#main'));
+			document.body.setAttribute('type', doc.body.getAttribute('type'));
 			// set previous page type for transition
-			document.querySelector('#main').setAttribute('from', previousPageType);
-			document.querySelector('#main').classList.remove('transition-done');
+			document.body.setAttribute('from', previousPageType);
+			document.body.classList.remove('transition-done');
+			// set navbar active tab
+			document.querySelector('.nav-sections').setAttribute(
+				'data-section', 
+				doc.querySelector('.nav-sections').getAttribute('data-section')
+			);
 			// restore the scroll position
 			if (scroll !== null && document.querySelector('#container')) {
 				document.querySelector('#container').scrollTop = scroll;
@@ -76,7 +82,7 @@ class Router {
 		try {
 			await transition.finished;
 		} finally {
-			document.querySelector('#main').classList.add('transition-done');
+			document.body.classList.add('transition-done');
 		}
 	}
 
@@ -84,14 +90,14 @@ class Router {
 		if (e.state) {
 			await this.loadHTML(
 				location.href,
-				document.querySelector('#main')?.getAttribute('type') ?? null,
+				document.body.getAttribute('type') ?? null,
 				e.state.html,
 				e.state.scroll
 			);
 		} else {
 			await this.loadHTML(
 				location.href,
-				document.querySelector('#main')?.getAttribute('type') ?? null
+				document.body.getAttribute('type') ?? null
 			);
 		}
 	}
