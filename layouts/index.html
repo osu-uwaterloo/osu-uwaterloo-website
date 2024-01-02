@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>{{ print .Site.Title }}</title>
     {{ partial "head" . }}
@@ -9,27 +10,27 @@
       <div id="osuButtonContainer">
         <div id="buttonWrapper">
           <div id="logoContainer" onClick="document.querySelector('#optionsContainer').classList.toggle('open')">
-              <img id="logo" src="/images/logo.png" draggable="false"></img>
+              <img id="logo" src="/images/logo.png" draggable="false" alt="osu! logo"></img>
           </div>
           <div id="optionsContainer">
             <div class="option">
               <a class="optionImage" href="/about">
-                <img class="optionImage" src="images/menu-button-1.png"/>
+                <img class="optionImage" src="images/menu-button-1.png" alt="about" aria-label="about"/>
               </a>
             </div>
             <div class="option">
               <a class="optionImage" href="/members">
-                <img class="optionImage" src="images/menu-button-2.png"/>
+                <img class="optionImage" src="images/menu-button-2.png" alt="members" aria-label="members"/>
               </a>
             </div>
             <div class="option">
               <a class="optionImage" href="/events">
-                <img class="optionImage" src="images/menu-button-3.png"/>
+                <img class="optionImage" src="images/menu-button-3.png" alt="events" aria-label="events"/>
               </a>
             </div>
             <div class="option">
               <a class="optionImage" href="{{ $.Site.Params.urls.discord }} ">
-                <img class="optionImage" src="images/menu-button-4.png"/>
+                <img class="optionImage" src="images/menu-button-4.png" alt="discord" aria-label="discord"/>
               </a>
             </div>
           </div>
