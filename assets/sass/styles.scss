@@ -33,6 +33,7 @@ html {
     background-image: url("/images/e5-stairs-triangles.png");
     background-size: 100% auto;
     background-repeat: repeat-y;
+	height: 100%;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
     color: var(--gray-1);
     margin: 0;
     overflow: hidden;
+	height: 100%;
 }
 
 
