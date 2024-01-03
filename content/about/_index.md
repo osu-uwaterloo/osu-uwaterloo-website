@@ -7,12 +7,13 @@ weight = 1
 Welcome to **osu!UWaterloo**!
 
 osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardless of skill level. We run many events each term  including:
-- Waterloo osu! Cup (trimesterly in-house tournament)
+- Waterloo osu! Cup
 - osu!-related contests
 - Trivia
+- In-person meetups
 - And more!
 
-![Meow](/images/perpet.jpg)
+![A UWaterloo student playing osu!](/images/perpet.jpg)
 
 ## How to Join
 1. Join the [Discord Server](https://discord.gg/mfWqAFg).
@@ -22,12 +23,12 @@ osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardles
 
 ## Club Meetings
 
-osu!UWaterloo officially meets in-person roughly once every two weeks, usually on Saturday 2-6pm at [PHYS 145](https://maps.app.goo.gl/eYAM98mDbcBJEHG8A). Please check the announcements channel in the Discord server to stay up-to-date!
+osu!UWaterloo officially meets in-person bi-weekly, usually on Saturday 2-6pm at [PHYS 145](https://maps.app.goo.gl/eYAM98mDbcBJEHG8A). Please check the announcements channel in the Discord server to stay up-to-date!
 
 ## Collegiate Teams
 
-Players who wish to compete at a competitive level are welcomed to try out for the osu!uwaterloo collegiate teams!
-The teams participate in a recurring tournament series dubbed the [*osu! Collegiate League*](https://discord.gg/V5XhAcj) (o!CL) which runs every fall and winter term. At the time of this writing, o!CL hosts collegiate tournaments for standard, mania, and taiko. The osu!std league runs both a Tier 1 and Tier 2 tournament side-by-side, so players of all skill levels are encouraged to try out! 
+Players who wish to compete at a competitive level are encouraged to play for the osu!UWaterloo collegiate teams.
+These teams participate in [*osu! Collegiate League*](https://discord.gg/V5XhAcj) (o!CL) which runs every fall and winter term, with standard, mania, and taiko gamemodes. The osu!std league runs both a Tier 1 and Tier 2 tournament side-by-side, so players of all skill levels are encouraged to try out! Please contact `pikapwn` on Discord if interested.
 
 View osu!uwaterloo's collegiate competition history [here](https://docs.google.com/spreadsheets/d/1q69xG9c-aGkmhsvWzccwe98Z07FusTLz40VBTi1NNZw/edit?usp=sharing).
 
