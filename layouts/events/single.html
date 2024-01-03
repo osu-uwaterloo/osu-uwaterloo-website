@@ -1,8 +1,90 @@
 {{- define "main" -}}
 <main>
-    <img class="event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
-    <h1 class="title-with-author">{{ .Title }}</h1>
-    <span class="event-author">Written by <b>{{ .Params.Author }}</b></span>
-    {{ .Content }}
+  {{ if (isset .Params "cover") }}
+  <img class="event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
+  {{ end }}
+  <h1 class="title-with-author">{{ .Title }}</h1>
+  {{ if (isset .Params "author") }}
+  <span class="event-author">Written by <b>{{ .Params.Author }}</b></span>
+  {{ end }}
+  
+  {{ with .Params.woc }}
+    Links: 
+    
+    <ul>
+      {{ with .rules }}
+      <li>
+        <a href="{{ . }}">Rules</a>
+      </li>
+      {{ end }}
+      
+      {{ with .sheet }}
+      <li>
+        <a href="{{ . }}">Main Sheet</a>
+      </li>
+      {{ end }}
+      
+      {{ with .bracket }}
+      <li>
+        <a href="{{ . }}">Bracket</a>
+      </li>
+      {{ end }}
+    </ul>
+    
+    
+    {{ with .host }}
+    <p>Host: {{ . }}</p>
+    {{ end }}
+
+    {{ with .regs }}
+    <p>Number of teams: {{ . }}</p>
+    {{ end }}
+    
+    {{ with .term }}
+    <p>Term: {{ . }}</p>
+    {{ end }}
+    
+    {{ with .results }}
+    {{ with (index . 0) }}
+    <p>First Place: <code>{{ .team_name }}</code></p>
+    <ul>
+      {{ with .players }}
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ with (index . 1) }}
+    <p>Second Place: <code>{{ .team_name }}</code></p>
+    <ul>
+      {{ with .players }}
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ with (index . 2) }}
+    <p>Third Place: <code>{{ .team_name }}</code></p>
+    <ul>
+      {{ with .players }}
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+  {{ end }}
+  
+  {{ end }}
+  {{ .Content }}
+  {{ with .Params.woc.highlights }}
+    <h3>Highlights</h3>
+    <!-- To do: find a good way to display these (should support twitch embeds, and regular images)! -->
+    {{ range . }}
+      <iframe src="{{ . }}" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+    {{ end }}
+  {{ end }}
 </main>
 {{- end -}}
