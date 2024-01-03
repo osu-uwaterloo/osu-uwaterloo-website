@@ -6,12 +6,13 @@ weight = 1
 
 Welcome to **osu!UWaterloo**!
 
-osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardless of skill level. We run many events each term  including:
+osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardless of skill level, gamemode, or however else they may choose to enjoy osu! We run a number of events each term  including:
 - Waterloo osu! Cup
 - osu!-related contests
 - Trivia
 - In-person meetups
-- And more!
+
+No term is the same, but you can always expect some fun events to be planned!
 
 ![A UWaterloo student playing osu!](/images/perpet.jpg)
 
@@ -28,7 +29,9 @@ osu!UWaterloo officially meets in-person bi-weekly, usually on Saturday 2-6pm at
 ## Collegiate Teams
 
 Players who wish to compete at a competitive level are encouraged to play for the osu!UWaterloo collegiate teams.
-These teams participate in [*osu! Collegiate League*](https://discord.gg/V5XhAcj) (o!CL) which runs every fall and winter term, with standard, mania, and taiko gamemodes. The osu!std league runs both a Tier 1 and Tier 2 tournament side-by-side, so players of all skill levels are encouraged to try out! Please contact `pikapwn` on Discord if interested.
+These teams participate in [*osu! Collegiate League*](https://discord.gg/V5XhAcj) (o!CL) which runs every fall and winter term, with standard, mania, and taiko gamemodes. The osu!std league runs both a Tier 1 and Tier 2 tournament side-by-side, so players of all skill levels are encouraged to try out!
+
+Please contact `pikapwn` on Discord if you are interested in competing.
 
 View osu!uwaterloo's collegiate competition history [here](https://docs.google.com/spreadsheets/d/1q69xG9c-aGkmhsvWzccwe98Z07FusTLz40VBTi1NNZw/edit?usp=sharing).
 
