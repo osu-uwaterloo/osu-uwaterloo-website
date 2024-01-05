@@ -10,7 +10,13 @@
       <div id="osuButtonContainer">
         <div id="buttonWrapper">
           <div id="logoContainer" onClick="document.querySelector('#optionsContainer').classList.toggle('open')">
-              <img id="logo" src="/images/logo.png" draggable="false" alt="osu! logo"></img>
+            <div id="logo">
+              <svg class="triangles" viewBox="0 0 100 100"/>
+              <div class="inner-border"></div>
+              <div class="outer-border"></div>
+              {{ partial "svg" "logo-text" . }}
+              {{ partial "svg" "logo-goose" . }}
+            </div>
           </div>
           <div id="optionsContainer">
             <div class="option">
