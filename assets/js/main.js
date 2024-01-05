@@ -221,7 +221,7 @@ class Triangles {
 			let y = Number(triangle.getAttribute('y'));
 			const scale = Number(triangle.getAttribute('scale'));
 			const size = Number(triangle.getAttribute('size'));
-			y -= Math.max(0.5, scale) * movedDistance;
+			y -= Math.max(0.35, scale) * movedDistance;
 			if (y < - size / 2) {
 				triangle.remove();
 				this.addTriangle();
