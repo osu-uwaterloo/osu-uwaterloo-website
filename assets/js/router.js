@@ -198,6 +198,7 @@ class Triangles {
 	init() {
 		this.svg.innerHTML = '';
 		this.addTriangles(true);
+		window.addEventListener('visibilitychange', this.onVisibilityChange.bind(this));
 		this.animation = requestAnimationFrame(this.tick.bind(this));
 	}
 
@@ -277,6 +278,7 @@ class Triangles {
 	destory() {
 		cancelAnimationFrame(this.animation);
 		this.svg = null;
+		window.removeEventListener('visibilitychange', this.onVisibilityChange.bind(this));
 	}
 
 	randomBetween(min, max) {
@@ -287,6 +289,15 @@ class Triangles {
 		const shade = 1.025 + (Math.random() - 0.5) * 0.175;
 		const color = this.baseColor.map(c => Math.round(c * shade));
 		return `rgb(${color.join(',')})`;
+	}
+
+	onVisibilityChange() {
+		if (document.hidden) {
+			cancelAnimationFrame(this.animation);
+		} else {
+			this.lastTime = null;
+			this.animation = requestAnimationFrame(this.tick.bind(this));
+		}
 	}
 }
 
