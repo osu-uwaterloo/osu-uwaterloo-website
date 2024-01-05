@@ -291,7 +291,7 @@ class Triangles {
 }
 
 
-// initialzaion
+// Initialzaion
 const initHomeCookieTriangleAnimation = () => {
 	if (!document.querySelector('#logo .triangles')) return;
 	window.homeCookieTriangleAnimation = new Triangles(document.querySelector('#logo .triangles'));
@@ -302,10 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 Router.init(() => {
-	console.log('before navigate');
 	window.homeCookieTriangleAnimation?.destory();
 
 }, () => {
-	console.log('after navigate');
 	initHomeCookieTriangleAnimation();
 });
