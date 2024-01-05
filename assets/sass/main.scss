@@ -196,31 +196,37 @@ footer {
     justify-content: flex-end;
 }
 
-.content a {
-    color: var(--accent-colour);
-    text-decoration: none;
-    transition: filter 0.2s ease;
-    &:hover {
-        filter: brightness(0.85);
+// article styles
+.content {
+    img {
+        width: 100%;
     }
-    &:not(:has(img)) {
-        position: relative;
-        display: inline-block;
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 1px;
-            background-color: var(--accent-colour);
-            transition: width 0.2s ease;
-            position: absolute;
-            bottom: -1px;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none;
+    a {
+        color: var(--accent-colour);
+        text-decoration: none;
+        transition: filter 0.2s ease;
+        &:hover {
+            filter: brightness(0.85);
         }
-        &:hover::after {
-            width: 100%;
+        &:not(:has(img)) {
+            position: relative;
+            display: inline-block;
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 1px;
+                background-color: var(--accent-colour);
+                transition: width 0.2s ease;
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                transform: translateX(-50%);
+                pointer-events: none;
+            }
+            &:hover::after {
+                width: 100%;
+            }
         }
     }
 }
