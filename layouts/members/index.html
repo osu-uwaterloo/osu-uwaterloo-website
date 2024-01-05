@@ -3,13 +3,13 @@
 <div class="content members-section">
   <h2>Executives</h2>
   <div class="members members-executives">
-    {{ range $.Site.Params.executives }}
+    {{ range $.Site.Data.members.executives }}
       {{ partial "member-entry" (dict "member" . "type" "executive")}}
     {{ end }}
   </div>
 
   <h2>Members</h2>
-  {{ $sortedMembers := sort $.Site.Params.members "username" }}
+  {{ $sortedMembers := sort $.Site.Data.members.members "username" }}
   <div class="members members-members">
     {{ range $sortedMembers }}
       {{ partial "member-entry" (dict "member" . "type" "member")}}
@@ -17,7 +17,7 @@
   </div>
 
   <h2>Alumni</h2>
-  {{ $sortedAlumni := sort $.Site.Params.alumni "username" }}
+  {{ $sortedAlumni := sort $.Site.Data.members.alumni "username" }}
   <div class="members members-alumni">
     {{ range $sortedAlumni }}
       {{ partial "member-entry" (dict "member" . "type" "alumni")}}
