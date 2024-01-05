@@ -1,23 +1,23 @@
 :root {
-	--white: #fff;
-	--gray-1: #ddd;
-	--gray-2: #999;
-	--gray-3: #333;
-	--gray-4: #222;
-	--yellow-1: #f3e072;
-	--yellow-2: #e8ca21;
+    --white: #fff;
+    --gray-1: #ddd;
+    --gray-2: #999;
+    --gray-3: #333;
+    --gray-4: #222;
+    --yellow-1: #f3e072;
+    --yellow-2: #e8ca21;
 
-	--font-colour: var(--gray-1);
-	--muted-font-colour: var(--gray-2);
-	--background-colour: var(--gray-3);
-	--background-dark-colour: var(--gray-4);
-	--accent-light-colour: var(--yellow-1);
-	--accent-colour: var(--yellow-2);
-	--navbar-colour: #191919;
-	--navbar-height: 56px;
-	--user-card-link-colour: #fff2aa;
-	--main-card-background-colour: #2a2822;
-	--main-card-title-background-colour: #3d3829;
+    --font-colour: var(--gray-1);
+    --muted-font-colour: var(--gray-2);
+    --background-colour: var(--gray-3);
+    --background-dark-colour: var(--gray-4);
+    --accent-light-colour: var(--yellow-1);
+    --accent-colour: var(--yellow-2);
+    --navbar-colour: #191919;
+    --navbar-height: 56px;
+    --user-card-link-colour: #fff2aa;
+    --main-card-background-colour: #2a2822;
+    --main-card-title-background-colour: #3d3829;
 }
 
 
@@ -33,15 +33,15 @@ html {
     background-image: url("/images/e5-stairs-triangles-min.png");
     background-size: cover;
     background-repeat: repeat-y;
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: var(--gray-1);
     margin: 0;
     overflow: hidden;
-	height: 100%;
+    height: 100%;
 }
 
 
@@ -59,12 +59,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	* {
-		view-transition-name: unset !important;
-	}
+    * {
+        view-transition-name: unset !important;
+    }
 }
 * {
-	-webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 svg {

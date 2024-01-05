@@ -6,13 +6,13 @@
     width: 100%;
     overflow: hidden;
     margin-top: var(--navbar-height);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-	&.home {
-		margin-top: 0;
-	}
+    &.home {
+        margin-top: 0;
+    }
 }
 #card {
     height: calc(100% - var(--navbar-height));
@@ -21,62 +21,62 @@
     max-width: calc(min(1080px, 100%));
     // sadly that hugo scss compiler doesn't recognize min() as a built-in css function :(
     overflow-y: visible;
-	background-color: var(--main-card-background-colour);
-	padding: 0;
+    background-color: var(--main-card-background-colour);
+    padding: 0;
     position: relative;
-	box-sizing: border-box;
+    box-sizing: border-box;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.4);
     view-transition-name: container;
 
-	#container {
-		height: 100%;
-		width: 100%;
-		overflow-y: auto;
-		overflow-x: hidden;
+    #container {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
 
-		&::-webkit-scrollbar {
-			width: 10px;
-			background-color: var(--main-card-background-colour);
-		}
-		&::-webkit-scrollbar-thumb {
-			background-color: #fff3;
-			border-radius: 2px;
-			&:hover {
-				background-color: #fff4;
-			}
-		}
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--main-card-background-colour);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #fff3;
+            border-radius: 2px;
+            &:hover {
+                background-color: #fff4;
+            }
+        }
         scrollbar-color: #fff3 var(--main-card-background-colour);
         scrollbar-width: thin;
 
-		> .title {
-			display: flex;
-			padding: 20px 35px;
-			background-color: var(--main-card-title-background-colour);
-			margin: 0;
-			align-items: center;
-			gap: 0.5em;
-			> svg {
-				width: 0.8em;
-				height: 0.8em;
-			}
-			&.title-with-author {
-				display: block;
-				> h1 {
-					margin: 0;
-				}
-				.title-author {
-					margin-top: 0.5em;
-					opacity: 0.8;
-				}
-			}
-		}
-		> .content {
-			display: block;
-			padding: 25px 35px;
-			background-color: var(--main-card-background-colour);
-			//line-height: 1.8;
-		}
-	}
+        > .title {
+            display: flex;
+            padding: 20px 35px;
+            background-color: var(--main-card-title-background-colour);
+            margin: 0;
+            align-items: center;
+            gap: 0.5em;
+            > svg {
+                width: 0.8em;
+                height: 0.8em;
+            }
+            &.title-with-author {
+                display: block;
+                > h1 {
+                    margin: 0;
+                }
+                .title-author {
+                    margin-top: 0.5em;
+                    opacity: 0.8;
+                }
+            }
+        }
+        > .content {
+            display: block;
+            padding: 25px 35px;
+            background-color: var(--main-card-background-colour);
+            //line-height: 1.8;
+        }
+    }
 }
 ::view-transition-old(container) {
     animation: container-out 0.5s ease;
