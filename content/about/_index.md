@@ -12,7 +12,7 @@ osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardles
 - Trivia
 - In-person meetups
 
-No term is the same, but you can always expect unique events to be planned!
+No term is the same, but you can always expect fun and unique events!
 
 ![A UWaterloo student playing osu!](/images/perpet.jpg)
 
