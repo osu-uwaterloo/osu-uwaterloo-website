@@ -89,10 +89,6 @@ body[type="home"] #main{
     height: 30em;
     width: 30em;
     view-transition-name: logo;
-    z-index: 2;
-
-
-
     box-sizing: border-box;
     background-color: #f1c814;
     > svg, div {
@@ -105,11 +101,11 @@ body[type="home"] #main{
         box-sizing: border-box;
     }
     .outer-border {
-        border: 16px solid #000;
+        border: (16 / 15) * 1em solid #000;
         transition: border-width 0.25s linear;
     }
     .inner-border {
-        border: 23px solid #fff;
+        border: (23 / 15) * 1em solid #fff;
         opacity: 0.375;
         transition: border-width 0.25s linear;
         will-change: border-width;
@@ -120,7 +116,12 @@ body[type="home"] #main{
         will-change: transform, opacity;
     }
     .logo-text-icon {
-        filter: drop-shadow(4px 4px 0 #e6a20e99);
+        filter: drop-shadow(
+            (4 / 15) * 1em
+            (4 / 15) * 1em
+            0
+            #e6a20e99
+        );
     }
     &:hover {
         .logo-goose-icon {
@@ -128,26 +129,14 @@ body[type="home"] #main{
             opacity: 0.1;
         }
         .outer-border {
-            border-width: 12px;
+            border-width: (12 / 15) * 1em;
         }
         .inner-border {
-            border-width: 0px;
+            border-width: 0;
         }
     }
 }
 
-img#logo-overlay {
-    animation: overlay-pulse 1s infinite;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 20%;
-    pointer-events: none;
-}
 
 #optionsContainer {
     .option {
