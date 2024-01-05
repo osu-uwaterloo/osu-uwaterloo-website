@@ -216,7 +216,7 @@ class Triangles {
 
 	update(elapsed) {
 		const triangles = this.svg.querySelectorAll('polygon');
-		const movedDistance = elapsed * 1 * this.baseVelocity / (this.height / this.triangleSize) / 2000;
+		const movedDistance = elapsed * 1 * this.baseVelocity / (this.height / this.triangleSize) / 2500;
 		for (const triangle of triangles) {
 			let y = Number(triangle.getAttribute('y'));
 			const scale = Number(triangle.getAttribute('scale'));
