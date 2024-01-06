@@ -1,0 +1,23 @@
+rules: "https://docs.google.com/document/d/1ZUnPwE5fEU4KTUdkakbB8RL5_ym_ssXkOf-q4JEQ5Ik/edit?usp=sharing" # Rules doc url
+sheet: "https://docs.google.com/spreadsheets/d/1MotVPMHFuDAm48NkpCWWWJ6SXK5wpjkpFPizAaYvVt4/edit?usp=sharing" # Main sheet url
+bracket: "https://challonge.com/woc13" # Challonge bracket url
+host: PikaPwn # Tourney host name
+regs: 8
+description: ""
+results:
+  - team_name: "time"
+    players:
+    - name: Asorn
+      id: 10396162
+    - name: KLOCWISE
+      id: 12055633
+    - name: MidC
+      id: 20461077
+    - name: Hoyin1212
+      id: 6412053
+    - name: bubblesimpi
+      id: 16789458
+    - name: danielq987 
+      id: 10538842
+highlights: 
+  - https://clips.twitch.tv/embed?clip=AdorableDignifiedTofuJonCarnage-ikeSoYOsqVItAae0&parent=localhost&parent=osu.uwaterloo.ca

@@ -1,8 +1,20 @@
 {{- define "main" -}}
 <main>
-    <img class="event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
-    <h1 class="title-with-author">{{ .Title }}</h1>
-    <span class="event-author">Written by <b>{{ .Params.Author }}</b></span>
-    {{ .Content }}
+  {{ if (isset .Params "cover") }}
+  <img class="event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
+  {{ end }}
+  <h1 class="title-with-author">{{ .Title }}</h1>
+  {{ if (isset .Params "author") }}
+  <span class="event-author">Written by <b>{{ .Params.Author }}</b></span>
+  {{ end }}
+  
+  {{ $data := .Site.Data.woc }}
+  
+  {{ with .Params.woc }}
+    {{ with (index $data .) }}
+      {{ partial "woc" (dict "woc" . "content" $.Content) }} 
+    {{ end }}
+  {{ end }}
+  
 </main>
 {{- end -}}
