@@ -1,0 +1,77 @@
+<div class="woc">
+    {{ with .woc }}
+      <h2>Overview</h2>
+      
+      <h3>Links</h3>
+      <ul>
+        {{ with .rules }}
+        <li>
+          <a href="{{ . }}">Rules</a>
+        </li>
+        {{ end }}
+        
+        {{ with .sheet }}
+        <li>
+          <a href="{{ . }}">Main Sheet</a>
+        </li>
+        {{ end }}
+        
+        {{ with .bracket }}
+        <li>
+          <a href="{{ . }}">Bracket</a>
+        </li>
+        {{ end }}
+      </ul>
+      
+      
+      {{ with .host }}
+      <p>Host: {{ . }}</p>
+      {{ end }}
+
+      {{ with .regs }}
+      <p>Number of teams: {{ . }}</p>
+      {{ end }}
+      
+      {{ with .term }}
+      <p>Term: {{ . }}</p>
+      {{ end }}
+      
+      <h3>Results</h3>
+      {{ with .results }}
+        {{ with (index . 0) }}
+          {{ partial "woc-team" (dict "team" . "label" "First Place") }}
+        {{ end }}
+        {{ with (index . 1) }}
+          {{ partial "woc-team" (dict "team" . "label" "Second Place") }}
+        {{ end }}
+        {{ with (index . 2) }}
+          {{ partial "woc-team" (dict "team" . "label" "Third Place") }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ .content }}
+  {{ with .woc.description }}
+    {{ . }}
+  {{ end }}
+
+  {{ with .woc.highlights }}
+    <h2>Highlights</h2>
+    <!-- To do: find a good way to display these (should support twitch embeds, and regular images)! -->
+    {{ range . }}
+      <!-- twitch embeds -->
+      {{ $link := . }}
+      {{ if (isset . "link")}}
+        {{ $link = .link }}
+        <p>{{ .caption }}</p>
+      {{ end }}
+      
+      {{ if (strings.Contains $link "twitch") }}
+        <iframe src="{{ $link }}&autoplay=false&parent=localhost&parent=osu.uwaterloo.ca" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+      {{ else }}
+        <img src="{{ $link }}"></img>
+      {{ end }}
+
+    {{ end }}
+  {{ end }}
+</div>

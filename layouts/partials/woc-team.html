@@ -1,0 +1,13 @@
+<div class="woc-team">
+  {{ $label := .label}}
+  {{ with .team }}
+    <p><b>{{ $label }}:</b> {{ .team_name }}</p>
+    <ul>
+      {{ with .players }}
+        {{ range . }}
+        <li><a href="https://osu.ppy.sh/users/{{ .id }}">{{ .name }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  {{ end }}
+</div>

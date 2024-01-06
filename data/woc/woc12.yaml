@@ -1,0 +1,27 @@
+rules: "https://docs.google.com/document/d/19SvN3umQ5l3o98tLNfyfIAqAmLd1Dnr5X-bN3pP3_kw/edit?usp=sharing" # Rules doc url
+sheet: "https://docs.google.com/spreadsheets/d/1XsUU0NXJRDCzj2244Ypf3pQC2V5aeBDg7zv4kbvpCfU/edit?usp=sharing" # Main sheet url
+bracket: "https://challonge.com/woc12" # Challonge bracket url
+host: Tedyee # Tourney host name
+regs: 11
+description: ""
+results:
+  - team_name: "FlatPaper's Slaves"
+    players:
+    - name: oufoufouf
+      id: 18906801
+    - name: FlatPaper
+      id: 11255340
+    - name: BATBALL
+      id: 15173952
+    - name: Hoyin1212
+      id: 6412053
+    - name: barbarianparade
+      id: 19250889
+# Highlights can either be just a twitch link (string), or a link + caption (object)
+highlights: 
+  - https://clips.twitch.tv/embed?clip=VivaciousSeductiveJamGOWSkull-OEgTLwB3eJRL8MTO
+  - https://clips.twitch.tv/embed?clip=ResourcefulSarcasticStarlingFloof-wMBa_M9nNcpprUgD
+  - link: https://player.twitch.tv/?video=1656716716&time=0h37m57s
+    caption: CherryKit gets her top play in match on Mynarco +HD!
+  - link: https://player.twitch.tv/?video=1656716716&time=0h57m6s
+    caption: Match point of grand finals.

@@ -1,0 +1,26 @@
+rules: "https://docs.google.com/document/d/1mN1Wi9imcW3xU0QX2MomOSRUS5EEevMuaYmAGNBUzK4" # Rules doc url
+sheet: "https://docs.google.com/spreadsheets/d/1PLcrE7iRVXaDferxBxIilgfSEMCIbLrk2xW1n7g8-V4" # Main sheet url
+bracket: https://challonge.com/hsmhv27d # Challonge bracket url
+host: klocwise # Tourney host name
+regs: 6
+description: ""
+results:
+  - team_name: "the skin thieves"
+    players:
+    - name: danielq987
+      id: 10538842
+    - name: Rijrya
+      id: 11186709
+    - name: LumenLogic
+      id: 8171404
+    - name: TheBushy
+      id: 11305115
+    - name: jpepesi
+      id: 15500029
+    - name: MeowUsername 
+      id: 13241584
+highlights: 
+  - https://clips.twitch.tv/embed?clip=InnocentSilkyBaboonDansGame-aUswRWrv4H_DIzRB&parent=localhost&parent=osu.uwaterloo.ca
+  - https://clips.twitch.tv/embed?clip=FantasticCarelessRatItsBoshyTime-skCIjsATzvy7RPMA&parent=localhost&parent=osu.uwaterloo.ca
+  - link: https://i.imgur.com/3zHukLc.png
+    caption: Dudsunz on NM1 in the first round :D

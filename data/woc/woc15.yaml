@@ -1,0 +1,21 @@
+rules: "https://docs.google.com/document/d/1jyqI8Rye4OCp6KZLVXSX1d30l35a16fmdK1TP3fIYes" # Rules doc url
+sheet: "https://docs.google.com/spreadsheets/d/1GPDp-f97NBqT246vU0q_xi8SiV7J0cgJskA1LLxu1qQ" # Main sheet url
+bracket: https://challonge.com/ydusvmpz # Challonge bracket url
+host: jiaxunjason # Tourney host name
+regs: 11
+description: ""
+results:
+  - team_name: "/osu-duel match firstopponent:@MidC starrating:7.5 bestof:Best of 11"
+    players:
+    - name: White Gengar
+      id: 17229617
+    - name: MidC
+      id: 20461077
+  - team_name: "Divergence 1.048727%"
+    players:
+    - name: PikaPwn
+      id: 2012453
+    - name: atokymat
+      id: 11465676
+highlights: 
+  - link: "https://clips.twitch.tv/embed?clip=DoubtfulExuberantSandpiperBabyRage-Veanf36dqtg1eqDU&parent=localhost&parent=osu.uwaterloo.ca"
