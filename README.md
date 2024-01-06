@@ -44,9 +44,9 @@ The "about" page is a simple static-content page that describes the osu!UWaterlo
 
 ### members
 
-The "members" page showcases all current and past members of the osu!UWaterloo club. To configure the users that show up on this page, modify the `/config/_default/params.yaml` file.
+The "members" page showcases all current and past members of the osu!UWaterloo club. To configure the users that show up on this page, modify the `/data/members.yaml` file.
 
-Members are split into three categories, each represented by a different array in the `params.yaml` file. Entries must follow their respective formats:
+Members are split into three categories, each represented by a different array in the `members.yaml` file. Entries must follow their respective formats:
 
 #### `executives`
 
