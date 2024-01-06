@@ -1,30 +1,27 @@
 {{ define "main" }}
-<main>
-  <div class="members-section">
-    <h1>{{ .Title }}</h1>
-
-    <h2>Executives</h2>
-    <div class="members members-executives">
-      {{ range $.Site.Params.executives }}
-        {{ partial "member-entry" (dict "member" . "type" "executive")}}
-      {{ end }}
-    </div>
-
-    <h2>Members</h2>
-    {{ $sortedMembers := sort $.Site.Params.members "username" }}
-    <div class="members members-members">
-      {{ range $sortedMembers }}
-        {{ partial "member-entry" (dict "member" . "type" "member")}}
-      {{ end }}
-    </div>
-
-    <h2>Alumni</h2>
-    {{ $sortedAlumni := sort $.Site.Params.alumni "username" }}
-    <div class="members members-alumni">
-      {{ range $sortedAlumni }}
-        {{ partial "member-entry" (dict "member" . "type" "alumni")}}
-      {{ end }}
-    </div>
+<h1 class="title">{{ partial "svg" "members" }}{{ .Title}}</h1>
+<div class="content members-section">
+  <h2>Executives</h2>
+  <div class="members members-executives">
+    {{ range $.Site.Data.members.executives }}
+      {{ partial "member-entry" (dict "member" . "type" "executive")}}
+    {{ end }}
   </div>
-</main>
+
+  <h2>Members</h2>
+  {{ $sortedMembers := sort $.Site.Data.members.members "username" }}
+  <div class="members members-members">
+    {{ range $sortedMembers }}
+      {{ partial "member-entry" (dict "member" . "type" "member")}}
+    {{ end }}
+  </div>
+
+  <h2>Alumni</h2>
+  {{ $sortedAlumni := sort $.Site.Data.members.alumni "username" }}
+  <div class="members members-alumni">
+    {{ range $sortedAlumni }}
+      {{ partial "member-entry" (dict "member" . "type" "alumni")}}
+    {{ end }}
+  </div>
+</div>
 {{ end }}

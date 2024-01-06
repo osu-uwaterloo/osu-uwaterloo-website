@@ -1,0 +1,30 @@
+.events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21em, 2fr));
+    gap: 1em;
+    margin-bottom: 1em;
+
+    a.event {
+        img {
+            aspect-ratio: 21 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            width: 100%;
+            transition-duration: 150ms;
+
+            &:hover {
+                filter: brightness(0.85);
+            }
+        }
+    }
+}
+
+span.event-author {
+    margin-top: -1em;
+}
+
+img.event-image {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+}

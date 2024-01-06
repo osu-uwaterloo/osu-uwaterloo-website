@@ -1,44 +1,61 @@
-<div class="member member-member">
+{{ $randomNum := index (shuffle (seq 1 8)) 0 }}
+{{ if isset .member "userId" }}
+  {{$randomNum = mod .member.userId 8 | add 1 }}
+{{ end }}
+{{ $fallbackCover := printf "https://osu.ppy.sh/images/headers/profile-covers/c%d.jpg" $randomNum }}
+{{ $cover := printf "https://ocover.vercel.app/%d" .member.userId }}
+{{ if isset .member "bg" }}
+  {{ $cover = .member.bg }}
+{{ end }}
+
+<div class="member member-member" style="--cover: url('{{ $cover }}'), url('{{ $fallbackCover }}')">
   {{ if isset .member "altPfp" }}
-  <img class="pfp pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}">        
+    <img class="pfp pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}">        
   {{ else }}
-  <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .member.userId }}" alt="osu! profile picture for user {{ .member.username }}">
+    <img class="pfp pfp-member" src="https://a.ppy.sh/{{ .member.userId }}" alt="osu! profile picture for user {{ .member.username }}">
   {{ end }}
   <div class="member-details">
-    <span class="member-username">
-      <a href="https://osu.ppy.sh/users/{{ .member.userId }}">{{ .member.username }}</a>
-      {{ if .member.name }}
-      <span class="member-name">({{ .member.name }})</span>
+    <div class="member-details-top">
+      {{ if isset .member "altPfp" }}
+        <img class="pfp pfp-mobile pfp-member" src="{{ .member.altPfp }}" alt="member picture for user {{ .member.username }}" aria-hidden="true">
+      {{ else }}
+        <img class="pfp pfp-mobile pfp-member" src="https://a.ppy.sh/{{ .member.userId }}" alt="osu! profile picture for user {{ .member.username }}" aria-hidden="true">
       {{ end }}
-    </span>
-    {{ if and (eq .type "executive" ) (.member.role) }}
-      <span class="member-role">{{ .member.role }}</span>
-    {{ end }}
-    {{ if or (.member.term) (.member.program) (.member.year) }}
-    <span class="member-program">
-      {{ if .member.term }}{{ .member.term }}{{ end }}
-      {{ if .member.program }}{{ .member.program }}{{ end }}
-      {{ if .member.year }}{{ .member.year }}{{ end }}
-    </span>
-    {{ end }}
+      <div class="member-info">
+        <span class="member-username">
+          <a href="https://osu.ppy.sh/users/{{ .member.userId }}" target="_blank" rel="noopener noreferrer">{{ .member.username }}</a>
+          {{ if .member.name }}
+          <span class="member-name">({{ .member.name }})</span>
+          {{ end }}
+        </span>
+        {{ if and (eq .type "executive" ) (.member.role) }}
+          <span class="member-role">{{ .member.role }}</span>
+        {{ end }}
+        {{ if or (.member.term) (.member.program) (.member.year) }}
+          <span class="member-program">
+            {{ if .member.term }}{{ .member.term }}{{ end }}
+            {{ if .member.program }}{{ .member.program }}{{ end }}
+            {{ if .member.year }}{{ .member.year }}{{ end }}
+          </span>
+        {{ end }}
+      </div>
+    </div>
     {{ if .member.blurb }}<span class="member-blurb">{{ .member.blurb }}</span>{{ end }}
-    <div class="member-socials-flex">
-      <span class="member-socials">
-      <span class="member-social-link">{{ partial "svg" "discord" }} @{{ .member.discord }}</span>
+    <div class="member-socials">
+      <span class="member-social-link">{{ partial "svg" "filled-discord" }} @{{ .member.discord }}</span>
       {{ if .member.website }}
         {{ $website := .member.website | replaceRE "^(https?://)?(.*?)/?$" "$2" }}
-        <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}">{{ $website }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "website" }} <a href="https://{{ $website }}" target="_blank" rel="noopener noreferrer">{{ $website }}</a></span>
       {{ end }}
       {{ if .member.github }}
-        <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .member.github }}">{{ .member.github }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "github" }} <a href="https://github.com/{{ .member.github }}" target="_blank" rel="noopener noreferrer">{{ .member.github }}</a></span>
       {{ end }}
       {{ if .member.twitch }}
-        <span class="member-social-link">{{ partial "svg" "twitch" }} <a href="https://twitch.tv/{{ .member.twitch }}">@{{ .member.twitch }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "filled-twitch" }} <a href="https://twitch.tv/{{ .member.twitch }}" target="_blank" rel="noopener noreferrer">@{{ .member.twitch }}</a></span>
       {{ end }}
       {{ if .member.youtube }}
-        <span class="member-social-link">{{ partial "svg" "youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}">@{{ .member.youtube }}</a></span>
+        <span class="member-social-link">{{ partial "svg" "filled-youtube" }} <a href="https://youtube.com/@{{ .member.youtube }}" target="_blank" rel="noopener noreferrer">@{{ .member.youtube }}</a></span>
       {{ end }}
-      </span>
     </div>
   </div>
 </div>

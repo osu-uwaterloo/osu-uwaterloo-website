@@ -1,6 +1,7 @@
-{{ $svg := . }}
-{{ $class := print $svg "-icon" }}
-{{ $match := "<svg (.*)?>(.*)</svg>" }}
+{{ $name := . }}
+{{ $svg := (printf "/static/icons/%s.svg" $name | readFile) }}
+{{ $class := print $name "-icon" }}
+{{ $svg = replaceRE	"<\\?xml (.*?)\\?>"	"" $svg }}
+{{ $svg = replaceRE	"<svg (.*?)>([\\s\\S]*?)</svg>"	(printf `<svg class="%s" ${1}>${2}</svg>` $class) $svg }}
 
-{{ $replaceWith := printf `<svg class="%s" ${1}>${2}</svg>` $class }}
-{{ return (replaceRE $match $replaceWith (printf "/static/icons/%s.svg" $svg | readFile) | safeHTML) }}
+{{ return ($svg | safeHTML) }}

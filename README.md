@@ -8,7 +8,7 @@ The osu! cookie on the root page uses code borrowed from the [first-edition of t
 
 This website is generated using [Hugo](https://gohugo.io/). The theme was developed by [Feiri](https://osu.ppy.sh/users/3214844) ([GitHub](https://github.com/yfxu)).
 
-This website displays content in the [Rubik](https://fonts.google.com/specimen/Rubik/about) font, which is licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+This website displays content in the [Quicksand](https://fonts.google.com/specimen/Quicksand/about) font, which is licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 
 ## Developing locally
 
@@ -44,9 +44,9 @@ The "about" page is a simple static-content page that describes the osu!UWaterlo
 
 ### members
 
-The "members" page showcases all current and past members of the osu!UWaterloo club. To configure the users that show up on this page, modify the `/config/_default/params.yaml` file.
+The "members" page showcases all current and past members of the osu!UWaterloo club. To configure the users that show up on this page, modify the `/data/members.yaml` file.
 
-Members are split into three categories, each represented by a different array in the `params.yaml` file. Entries must follow their respective formats:
+Members are split into three categories, each represented by a different array in the `members.yaml` file. Entries must follow their respective formats:
 
 #### `executives`
 
@@ -57,8 +57,10 @@ Members are split into three categories, each represented by a different array i
   program:  string        # UWaterloo program (eg. ECE or AFM etc) 
   name:     string | null # IRL name
   discord:  string        # discord username
+  website:  string | null # personal website
   twitch:   string | null # Twitch handle
   youtube:  string | null # YouTube handle 
+  github:   string | null # GitHub username
   blurb:    string        # user blurb
   role:     string        # executive member role
 ```
@@ -72,8 +74,10 @@ Members are split into three categories, each represented by a different array i
   program:  string        # UWaterloo program (eg. ECE or AFM etc) 
   name:     string | null # IRL name
   discord:  string        # discord username
+  website:  string | null # personal website
   twitch:   string | null # Twitch handle
-  youtube:  string | null # YouTube handle 
+  youtube:  string | null # YouTube handle
+  github:   string | null # GitHub username
   blurb:    string        # user blurb
 ```
 
@@ -85,8 +89,10 @@ Members are split into three categories, each represented by a different array i
   program:  string        # UWaterloo program (eg. ECE or AFM etc) 
   name:     string | null # IRL name
   discord:  string        # discord username
+  website:  string | null # personal website
   twitch:   string | null # Twitch handle
   youtube:  string | null # YouTube handle 
+  github:   string | null # GitHub username
   blurb:    string        # user blurb
 ```
 
