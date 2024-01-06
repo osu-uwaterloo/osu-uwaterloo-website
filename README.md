@@ -72,8 +72,10 @@ Members are split into three categories, each represented by a different array i
   program:  string        # UWaterloo program (eg. ECE or AFM etc) 
   name:     string | null # IRL name
   discord:  string        # discord username
+  website:  string | null # personal website
   twitch:   string | null # Twitch handle
-  youtube:  string | null # YouTube handle 
+  youtube:  string | null # YouTube handle
+  github:   string | null # GitHub handle
   blurb:    string        # user blurb
 ```
 
