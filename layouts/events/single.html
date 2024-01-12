@@ -3,6 +3,8 @@
     <img class="event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
     <h1 class="title-with-author">{{ .Title }}</h1>
     <span class="event-author">Written by <b>{{ .Params.Author }}</b></span>
-    {{ .Content }}
+    <article>
+        {{ .Content }}
+    </article>
 </main>
 {{- end -}}
