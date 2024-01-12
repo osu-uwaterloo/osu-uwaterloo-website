@@ -15,6 +15,7 @@
     --user-card-link-colour: #fff2aa;
     --main-card-background-colour: #2a2822;
     --main-card-title-background-colour: #3d3829;
+    --selection-colour: #e8ca2177;
 }
 
 
@@ -39,6 +40,12 @@ body {
     margin: 0;
     overflow: hidden;
     height: 100%;
+}
+
+// selection
+::selection {
+    background-color: var(--selection-colour);
+    color: var(--white);
 }
 
 
