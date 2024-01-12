@@ -4,19 +4,34 @@ layout = "index"
 weight = 1
 +++
 
-Welcome to the official **osu!uwaterloo** club website! The UW *osu!* club welcomes anyone interested in the game, regardless of their skill level, what modes they play, or however else they may choose to enjoy *osu!* (ahem* mappers). The club Discord is open to everyone, even if they are not a student attending the University of Waterloo.
+Welcome to **osu!UWaterloo**!
 
-osu!uwaterloo hosts a number of *osu!*-related events every term. This includes the trimesterly club tournament: Waterloo osu! Cup. Apart from that, there may be other special gameplay tournaments, trivia nights, *osu!* Skribbl.io, or whatever else the club members wish to organize. No term is the same, but you can always expect some fun events to be planned!
+osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardless of skill level, gamemode, or however else they may choose to enjoy osu! We run a number of events each term  including:
+- Waterloo osu! Cup
+- osu!-related contests
+- Trivia
+- In-person meetups
+
+No term is the same, but you can always expect fun and unique events!
+
+![A UWaterloo student playing osu!](/images/perpet.jpg)
+
+## How to Join
+1. Join the [Discord Server](https://discord.gg/mfWqAFg).
+2. Fill out out the [Verification Form](https://forms.gle/Q1HUK8ywaSmMvcCT6).
+3. Ping the Club Executive role in the `#verification` channel.
+4. Participate in events!
 
 ## Club Meetings
 
-osu!uwaterloo meets in-person roughly once every two weeks. Specific times and dates are subject to change due to the nature of student life.
-
-During the COVID-19 pandemic, club meetings were cancelled so as to protect the health of club members and other Waterloo students. In the event that another global health crisis emerges to once-more threaten societal stability, in-person meetings may be cancelled again.
+osu!UWaterloo officially meets in-person bi-weekly, usually on Saturday 2-6pm at [PHYS 145](https://maps.app.goo.gl/eYAM98mDbcBJEHG8A). Please check the `#announcements` channel in the Discord server to stay up-to-date!
 
 ## Collegiate Teams
 
-Players who wish to compete at a competitive level are welcomed to try out for the osu!uwaterloo collegiate teams! While *osu!* does not have an officially-recognized collegiate esports league, some folks have been organizing a recurring tournament series dubbed the [*osu! Collegiate League*](https://discord.gg/V5XhAcj) which runs every fall and winter term. At the time of this writing, OCL hosts collegiate tournaments for both standard and mania. The osu!std league runs both a Tier 1 and Tier 2 tournament side-by-side, so players of all skill levels are encouraged to try out! 
+Players who wish to compete at a competitive level are encouraged to play for the osu!UWaterloo collegiate teams.
+These teams participate in [*osu! Collegiate League*](https://discord.gg/V5XhAcj) (o!CL) which runs every fall and winter term, with standard, mania, and taiko gamemodes. The osu!std league runs both a Tier 1 and Tier 2 tournament side-by-side, so players of all skill levels are encouraged to try out!
+
+Please contact `@pikapwn` on Discord if you are interested in competing.
 
 View osu!uwaterloo's collegiate competition history [here](https://docs.google.com/spreadsheets/d/1q69xG9c-aGkmhsvWzccwe98Z07FusTLz40VBTi1NNZw/edit?usp=sharing).
 
