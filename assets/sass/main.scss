@@ -198,6 +198,13 @@ footer {
 
 // article styles
 .content {
+    line-height: 1.5;
+
+    pre {
+        padding: 1rem;
+        background-color: #0002;
+        border-radius: 6px;
+    }
     img {
         width: 100%;
     }
