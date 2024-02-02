@@ -1,50 +1,47 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
-    {{ $cookieStyles := resources.Get "sass/cookie.scss" | resources.ToCSS }}
     <title>{{ print .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    <link rel="stylesheet" href="{{ $cookieStyles.RelPermalink }}">
-    <link rel="icon" href="/images/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ partial "head" . }}
   </head>
-  <body>    
-    <div id="osuButtonContainer">
-      <div id="buttonWrapper">
-        <div id="logoContainer">
-            <img id="logo" src="/images/logo.png" draggable="false"></img>
-        </div>
-        <div id="optionsContainer">
-          <div class="option">
-            <a class="optionImage" href="/about">
-              <img class="optionImage" src="images/menu-button-1.png"/>
-            </a>
+  <body type="home">
+    {{ partial "navbar" . }}
+    <div id="main">
+      <div id="osuButtonContainer">
+        <div id="buttonWrapper">
+          <div id="logoContainer" onClick="document.querySelector('#optionsContainer').classList.toggle('open')">
+            <div id="logo">
+              <svg class="triangles" viewBox="0 0 100 100"/>
+              <div class="inner-border"></div>
+              <div class="outer-border"></div>
+              {{ partial "svg" "logo-text" . }}
+              {{ partial "svg" "logo-goose" . }}
+            </div>
           </div>
-          <div class="option">
-            <a class="optionImage" href="/members">
-              <img class="optionImage" src="images/menu-button-2.png"/>
-            </a>
-          </div>
-          <div class="option">
-            <a class="optionImage" href="/events">
-              <img class="optionImage" src="images/menu-button-3.png"/>
-            </a>
-          </div>
-          <div class="option">
-            <a class="optionImage" href="{{ $.Site.Params.urls.discord }} ">
-              <img class="optionImage" src="images/menu-button-4.png"/>
-            </a>
+          <div id="optionsContainer">
+            <div class="option">
+              <a class="optionImage" href="/about">
+                <img class="optionImage" src="images/menu-button-1.png" alt="about" aria-label="about"/>
+              </a>
+            </div>
+            <div class="option">
+              <a class="optionImage" href="/members">
+                <img class="optionImage" src="images/menu-button-2.png" alt="members" aria-label="members"/>
+              </a>
+            </div>
+            <div class="option">
+              <a class="optionImage" href="/events">
+                <img class="optionImage" src="images/menu-button-3.png" alt="events" aria-label="events"/>
+              </a>
+            </div>
+            <div class="option">
+              <a class="optionImage" href="{{ $.Site.Params.urls.discord }} ">
+                <img class="optionImage" src="images/menu-button-4.png" alt="discord" aria-label="discord"/>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script type="text/javascript">
-    const osuCookie = document.querySelector("#logoContainer");
-    const optionsContainer = document.querySelector("#optionsContainer");
-
-    osuCookie.addEventListener("click", () => {
-        optionsContainer.classList.toggle("open");
-    });
-  </script>
 </html>

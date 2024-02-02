@@ -1,25 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
     <title>{{ print .Title " | " .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    <link rel="icon" href="/images/logo.png" />
-    <meta charset="UTF-8"> 
+    {{ partial "head" . }}
   </head>
-  <body>
-    <br>
-    <div class="container">
-      {{ partial "navbar" . }}
-      <hr>
+  <body type="page">
+    {{ partial "navbar" . }}
+    <div id="main">
+      <div id="card">
+        <div class="card-deco" aria-hidden="true">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <main id="container">
+          {{- block "main" . }}
+          {{- end }}
+          {{ partial "footer" . }}
+        </main>
+      </div>
     </div>
-    <div class="container">
-      {{- block "main" . }}
-      {{- end }}
-    </div>
-    <div class="container">
-      <hr>
-      {{ partial "footer" . }}
-    </div>
-    <br>
   </body>
 </html>

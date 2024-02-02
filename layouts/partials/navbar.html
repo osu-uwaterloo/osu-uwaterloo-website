@@ -1,16 +1,18 @@
-<nav>
+<nav class="nav">
     <div class="nav-navigation">
-        <a href="/"><img src="/images/logo.png" alt="osu!UWaterloo logo"></a>
-        <div class="nav-navigation-text-links">
-            <a href="/about">about</a>
-            <a href="/members">members</a>
-            <a href="/events">events</a>
+        <a class="nav-logo" href="/"><img class="logo" src="/images/logo.png" alt="osu!UWaterloo logo"></a>
+        <div class="nav-sections" data-section="{{ .Section }}">
+            <a href="/about" text="about" desc="See who we are and what we do." aria-label="about">{{ partial "svg" "info" }}</a>
+            <a href="/members" text="members" desc="See who's in the club." aria-label="members">{{ partial "svg" "members" }}</a>
+            <a href="/events" text="events" desc="See what events we're hosting." aria-label="events">{{ partial "svg" "events" }}</a>
         </div>
     </div>
-    <div class="nav-socials">
-        <a href="{{ $.Site.Params.urls.discord }}">{{ partial "svg" "discord" }}</a>
-        <a href="{{ $.Site.Params.urls.youtube }}">{{ partial "svg" "youtube" }}</a>
-        <a href="{{ $.Site.Params.urls.twitch }}">{{ partial "svg" "twitch" }}</a>
-        <a href="{{ $.Site.Params.urls.email }}">{{ partial "svg" "mail" }}</a>
+    <div class="nav-socials-mobile-button" tabindex="0">{{ partial "svg" "link" }}</div>
+    <div class="nav-socials" tabindex="0">
+        <a href="{{ $.Site.Params.urls.discord }}" target="_blank">{{ partial "svg" "discord" }}</a>
+        <a href="{{ $.Site.Params.urls.youtube }}" target="_blank">{{ partial "svg" "youtube" }}</a>
+        <a href="{{ $.Site.Params.urls.twitch }}" target="_blank">{{ partial "svg" "twitch" }}</a>
+        <a href="{{ $.Site.Params.urls.email }}" target="_blank">{{ partial "svg" "mail" }}</a>
+        <div class="mobile-socials-close" onclick="this.blur()" tabindex="0">{{ partial "svg" "close" }}</div>
     </div>
 </nav>

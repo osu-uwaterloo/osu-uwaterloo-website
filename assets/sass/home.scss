@@ -1,16 +1,5 @@
-body {
-    overflow: hidden;
-    display: flex;
-}
-
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.row {
-    width: 100vw;
+body[type="home"] #main{
+    margin-top: 0;
 }
 
 #osuButtonContainer {
@@ -85,34 +74,69 @@ body {
     z-index: 1;
     position: relative;
     -webkit-tap-highlight-color: transparent;
+    border-radius: 10000px;
+    transition: transform 0.25s linear;
+    will-change: transform;
+    &:hover {
+        transform: scale(1.166667) !important;
+    }
 }
 
-img#logo {
+#logo {
     animation: logo-pulse 1s infinite;
-    transition: height .2s;
-    transition-timing-function: linear;
-    border-radius: 17.5em;
-    vertical-align: middle;
+    border-radius: 10000px;
     cursor: pointer;
     height: 30em;
+    width: 30em;
+    view-transition-name: logo;
+    box-sizing: border-box;
+    background-color: #f1c814;
+    > svg, div {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 10000px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .outer-border {
+        border: (16 / 15) * 1em solid #000;
+        transition: border-width 0.25s linear;
+    }
+    .inner-border {
+        border: (24 / 15) * 1em solid #fff;
+        opacity: 0.375;
+        transition: border-width 0.25s linear;
+        will-change: border-width;
+    }
+    .logo-goose-icon {
+        opacity: 0.15;
+        transition: transform 0.25s linear, opacity 0.25s linear;
+        will-change: transform, opacity;
+    }
+    .logo-text-icon {
+        filter: drop-shadow(
+            (4 / 15) * 1em
+            (4 / 15) * 1em
+            0
+            #e6a20e99
+        );
+    }
+    &:hover {
+        .logo-goose-icon {
+            transform: scale(1.05);
+            opacity: 0.1;
+        }
+        .outer-border {
+            border-width: (12 / 15) * 1em;
+        }
+        .inner-border {
+            border-width: 0;
+        }
+    }
 }
 
-img#logo:hover {
-    height: 35em;
-}
-
-img#logo-overlay {
-    animation: overlay-pulse 1s infinite;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 20%;
-    pointer-events: none;
-}
 
 #optionsContainer {
     .option {
@@ -139,50 +163,24 @@ img#logo-overlay {
         }
     }
 }
-
-img#discord {
-    margin-top: 2.5em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 5em;
-}
-
-#background {
-    position: fixed;
-    top: 0;
-    z-index: -1;
-}
-
-#triangles {
-    filter: contrast(500%) brightness(250%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#waterloo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: .4;
-    filter: saturate(150%);
-}
-
-.bgWrapper {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-}
-
 .optionImage {
     height: 100%;
 }
 
-.wusa {
-    position: absolute;
-    width: 7vw;
-    bottom: 0px;
-    right: 20px;
+
+@supports not (view-transition-name: test) {
+    body[type="home"][from="page"] #buttonWrapper {
+        animation: cookie-fade-in-fallback 0.3s ease;
+    }
+    
+    @keyframes cookie-fade-in-fallback {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 }

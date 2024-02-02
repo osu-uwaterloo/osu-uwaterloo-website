@@ -1,10 +1,10 @@
 {{- define "main" -}}
-<main>
-    <img class="event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
-    <h1 class="title-with-author">{{ .Title }}</h1>
-    <span class="event-author">Written by <b>{{ .Params.Author }}</b></span>
-    <article>
+    <img class="cover event-image" src="{{ .Params.Cover }}" alt="{{ .Params.CoverAlt }}">
+    <div class="title title-with-author">
+        <h1>{{ .Title }}</h1>
+        <div class="title-author">Written by <b>{{ .Params.Author }}</b></div>
+    </div>
+    <article class="content">
         {{ .Content }}
     </article>
-</main>
 {{- end -}}

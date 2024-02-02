@@ -1,0 +1,88 @@
+:root {
+    --white: #fff;
+    --gray-1: #ddd;
+    --gray-2: #999;
+    --gray-3: #333;
+    --gray-4: #222;
+    --yellow-1: #f3e072;
+    --yellow-2: #e8ca21;
+
+    --background-colour: var(--gray-3);
+    --background-dark-colour: var(--gray-4);
+    --accent-colour: var(--yellow-2);
+    --navbar-colour: #191919;
+    --navbar-height: 56px;
+    --user-card-link-colour: #fff2aa;
+    --main-card-background-colour: #2a2822;
+    --main-card-title-background-colour: #3d3829;
+    --selection-colour: #e8ca2177;
+}
+
+
+@import "./home.scss";
+@import "./nav.scss";
+@import "./main.scss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+html {
+    background-color: var(--background-colour);
+    background-image: url("/images/e5-stairs-triangles-min.png");
+    background-size: cover;
+    background-repeat: repeat-y;
+    height: 100%;
+}
+
+body {
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: var(--gray-1);
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+// selection
+::selection {
+    background-color: var(--selection-colour);
+    color: var(--white);
+}
+
+
+::view-transition-group(container) {
+    z-index: 1;
+}
+::view-transition-group(nav) {
+    z-index: 2;
+}
+::view-transition-group(nav-indicator) {
+    z-index: 2;
+}
+::view-transition-group(logo) {
+    z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        view-transition-name: unset !important;
+    }
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+svg {
+    height: 1em;
+    align-items: center;
+}
+hr {
+    border-top: 2px solid var(--background-dark-colour);
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+    margin: 0;
+}
+p {
+    line-height: 1.5em;
+}
