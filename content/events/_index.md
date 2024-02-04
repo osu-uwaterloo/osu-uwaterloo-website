@@ -1,5 +1,5 @@
 +++
-title = "about"
+title = "events"
 layout = "index"
 weight = 1
 +++
