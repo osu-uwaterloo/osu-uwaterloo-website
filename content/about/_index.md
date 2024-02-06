@@ -6,7 +6,7 @@ weight = 1
 
 Welcome to **osu!UWaterloo**!
 
-osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardless of skill level, gamemode, or however else they may choose to enjoy osu! We run a number of events each term  including:
+osu!UWaterloo welcomes anyone interested in [osu!](https://osu.ppy.sh) regardless of skill level, gamemode, or however else they may choose to enjoy osu! We run a number of events each term including:
 - Waterloo osu! Cup
 - osu!-related contests
 - Trivia
