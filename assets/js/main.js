@@ -12,8 +12,13 @@ class Router {
 		this.onBeforeNavigate = onBeforeNavigate;
 		this.onAfterNavigate = onAfterNavigate;
 		this.cache = {};
+		this.oldURL = window.location.href;
 		document.addEventListener('click', this.clickHandler.bind(this));
+		window.addEventListener('hashchange', this.hashChangeHandler.bind(this));
 		window.addEventListener('popstate', this.popStateHandler.bind(this));
+		window.addEventListener('DOMContentLoaded', () => {
+			this.hashChangeHandler(null, true);
+		});
 	}
 
 	async clickHandler(e) {
@@ -30,9 +35,17 @@ class Router {
 		}
 		if (new URL(url).pathname.replace(/\/$/, '') === location.pathname.replace(/\/$/, '')) {
 			e.preventDefault();
+			const oldHash = window.location.hash;
+			const newHash = new URL(url).hash;
+			if (oldHash !== newHash) {
+				e.preventDefault();
+				history.pushState(null, null, newHash);
+				this.hashChangeHandler();
+			}
 			return;
 		}
 		e.preventDefault();
+		this.oldURL = window.location.href;
 		await this.navigate(url);
 	}
 
@@ -94,6 +107,7 @@ class Router {
 			// run onAfterNavigate
 			if (this.onAfterNavigate) this.onAfterNavigate();
 		})
+		this.oldURL = url;
 		try {
 			await transition.finished;
 		}
@@ -104,6 +118,10 @@ class Router {
 	}
 
 	async popStateHandler(e) {
+		if (new URL(location.href).pathname.replace(/\/$/, '') === new URL(this.oldURL).pathname.replace(/\/$/, '')) {
+			// popstate ignored, because it is a hash change
+			return;
+		}
 		if (e.state) {
 			await this.loadHTML(
 				location.href,
@@ -119,11 +137,30 @@ class Router {
 		}
 	}
 
+	async hashChangeHandler(e, instantScroll = false) {
+		console.log('hashChangeHandler');
+		document.documentElement.scrollTo(0, 0);
+		document.body?.scrollTo(0, 0);
+		const hash = document.location.hash;
+		if (!hash) return;
+		const target = document.querySelector(hash);
+		if (!target) return;
+		const container = target.closest('#container');
+		if (!container) return;
+		document.querySelectorAll('.hash-target').forEach(e => e.classList.remove('hash-target'));
+		target.classList.add('hash-target');
+		const scroll = target.getBoundingClientRect().top + container.scrollTop - 60;
+		container.scrollTo({ top: scroll, behavior: instantScroll ? 'auto' : 'smooth' });
+	}
 
 	static init(onBeforeNavigate = null, onAfterNavigate = null) {
 		new Router(onBeforeNavigate, onAfterNavigate);
 	}
 }
+document.addEventListener('scroll', () => {
+	document.documentElement.scrollTo(0, 0);
+	document.body?.scrollTo(0, 0);
+});
 
 function transitionPolyfill(url) {
 	if (supportViewTransition) return;

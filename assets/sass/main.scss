@@ -75,6 +75,36 @@
             padding: 25px 35px;
             background-color: var(--main-card-background-colour);
             //line-height: 1.8;
+
+            h1, h2, h3, h4, h5, h6 {
+                position: relative;
+                &:target, &.hash-target {
+                    &::before {
+                        content: '';
+                        display: block;
+                        top: 50%;
+                        left: -20px;
+                        height: 0.3em;
+                        width: 0.3em;
+                        border: 4px solid var(--accent-colour);
+                        border-top: none;
+                        border-left: none;
+                        transform: translateY(-50%) rotate(-45deg) ;
+                        position: absolute;
+                        pointer-events: none;
+                        animation: target-hash-arrow-move 0.8s ease infinite, target-hash-arrow-fade-out 0.5s 1.6s forwards;
+                        @keyframes target-hash-arrow-move {
+                            0% { left: -25px; }
+                            50% { left: -20px; }
+                            100% { left: -25px; }
+                        }
+                        @keyframes target-hash-arrow-fade-out {
+                            0% { opacity: 1; }
+                            100% { opacity: 0; }
+                        }
+                    }
+                }
+            }
         }
     }
 }
