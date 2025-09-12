@@ -79,15 +79,6 @@ members:
     youtube: null
     blurb: I was the one who drew Pippi feet. All modes player, artist, and foodie fruitie enjoyer :3
     altPfp: https://cdn.discordapp.com/attachments/1003875303929688136/1156075887431786587/image.png?ex=6513a712&is=65125592&hm=4eb0955a50ad46d8a3b59413576521b08d55eced14f62d6d4aac27cb6775bd46&
-  - username: Feiri
-    userId: 3214844
-    term: 4A
-    program: ECE
-    name: Yifei
-    discord: feiri
-    twitch: feiri_
-    youtube: feiri_
-    blurb: Big fan of tech maps but I think I'm overworking myself accepting all these tourney mapping requests please help
   - username: Moshisme
     userId: 32405557
     term: 1A
@@ -290,3 +281,12 @@ alumni:
     twitch: redside100
     youtube: redside100
     blurb: meow
+  - username: Feiri
+    userId: 3214844
+    year: 2024
+    program: ECE
+    name: Yifei
+    discord: feiri
+    twitch: feiri_
+    youtube: feiri_
+    blurb: I heart teq map
