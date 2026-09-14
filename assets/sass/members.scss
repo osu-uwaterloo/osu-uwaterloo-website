@@ -2,6 +2,83 @@
     h2 {
         font-size: 28px;
     }
+
+    .members-sync-status {
+        margin: 0 0 18px;
+        opacity: .7;
+        font-size: 15px;
+    }
+
+    .members-loading {
+        &[hidden] {
+            display: none;
+        }
+
+        .member-loading-card {
+            min-height: 104px;
+            background: rgba(255, 255, 255, .08);
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .member-loading-avatar,
+        .member-loading-line {
+            background: rgba(255, 255, 255, .14);
+            background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, .12), transparent);
+            background-size: 200% 100%;
+            animation: member-loading-shimmer 1.4s ease-in-out infinite;
+        }
+
+        .member-loading-avatar {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 8px;
+        }
+
+        .member-loading-copy {
+            display: flex;
+            width: 65%;
+            max-width: 360px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .member-loading-line {
+            display: block;
+            width: 100%;
+            height: 13px;
+            border-radius: 999px;
+        }
+
+        .member-loading-name {
+            width: 55%;
+            height: 20px;
+        }
+
+        .member-loading-short {
+            width: 72%;
+        }
+    }
+
+    .members-empty {
+        margin: 0 0 20px;
+        opacity: .65;
+    }
+}
+
+@keyframes member-loading-shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .members-loading .member-loading-avatar,
+    .members-loading .member-loading-line {
+        animation: none;
+    }
 }
 
 .member {
