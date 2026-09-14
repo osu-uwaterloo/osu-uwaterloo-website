@@ -4,5 +4,8 @@
 {{ $router := resources.Get "js/main.js" }}
 {{ $router := $router | resources.Minify | resources.Fingerprint }}
 <script src="{{ $router.Permalink }}"></script>
+{{ $members := resources.Get "js/members.js" }}
+{{ $members := $members | resources.Minify | resources.Fingerprint }}
+<script src="{{ $members.Permalink }}"></script>
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

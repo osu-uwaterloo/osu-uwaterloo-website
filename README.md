@@ -46,6 +46,12 @@ The "about" page is a simple static-content page that describes the osu!UWaterlo
 
 The "members" page showcases all current and past members of the osu!UWaterloo club. To configure the users that show up on this page, modify the `/data/members.yaml` file.
 
+The page uses `data/members.yaml` as an immediate fallback, then loads the live
+opt-in member list from `ouw-members-api`. Discord roles decide whether a live
+profile appears under Executives, Members, or Alumni. Saved YAML fields such as
+executive title, program, name, and blurb are retained when the osu! user ID
+matches a live profile.
+
 Members are split into three categories, each represented by a different array in the `members.yaml` file. Entries must follow their respective formats:
 
 #### `executives`

@@ -100,7 +100,7 @@ class Router {
 			// run scripts
 			const scripts = document.querySelectorAll('script');
 			for (const script of scripts) {
-				if (!script.src) {
+				if (!script.src && (!script.type || script.type === 'text/javascript' || script.type === 'module')) {
 					eval(script.innerHTML);
 				}
 			}
@@ -347,6 +347,7 @@ const initHomeCookieTriangleAnimation = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	initHomeCookieTriangleAnimation();
+	window.initMembers?.();
 });
 
 Router.init(() => {
@@ -354,4 +355,5 @@ Router.init(() => {
 
 }, () => {
 	initHomeCookieTriangleAnimation();
+	window.initMembers?.();
 });
